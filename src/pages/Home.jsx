@@ -1,4 +1,4 @@
-import { Loader } from "../components";
+import { Loader, ScrollBackToTop } from "../components";
 import { Row, Col, Card, CardImg, CardText, CardTitle, CardBody } from 'reactstrap';
 import Carousel from 'react-bootstrap/Carousel';
 import { useState } from "react";

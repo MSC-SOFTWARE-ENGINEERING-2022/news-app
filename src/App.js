@@ -26,7 +26,7 @@
 
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Footer, CustomNavbar } from './components';
+import { Footer, CustomNavbar, ScrollBackToTop } from './components';
 import { Contact, Error, Home, News, NewsItem } from './pages';
 
 // import './css/components/components.css';
@@ -63,6 +63,7 @@ const App = () => {
         <Route path={error} element={<Error />} />
       </Routes>
       <Footer />
+      <ScrollBackToTop />
     </Router>
   );
 }
