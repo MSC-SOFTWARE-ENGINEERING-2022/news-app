@@ -1,0 +1,125 @@
+@import '../variables';
+
+.cmp{
+    &.navbar{
+        
+    }
+}
+
+// .card-overlay {
+//     position: absolute;
+//     bottom: 0;
+//     right: 0;
+//     background-color: rgba(0, 0, 0, 0.5);
+//     // padding: 10px;
+//     width: 100%;
+//     color: white;
+//   }
+
+//   .carousel-item {
+//     height: 100%;
+//   }
+  
+//   .card {
+//     height: 100%;
+//   }
+
+//   .carousel-item{
+//     div{
+//         background-position: center;
+//         background-repeat: no-repeat;
+//         background-size:cover;
+//     }
+//   }
+//   .transparent{
+//     background-color: transparent !important;
+//   }
+// .rowHome{
+//     margin: 0 !important;
+//     padding: 0 !important;
+//     div{
+//         margin: 0 !important;
+//         padding: 0 !important;
+//     }
+// }
+
+.divNavbar{
+    margin: 0 auto;
+    // display: flex;
+}
+
+.carousel-item img{
+    height: 300px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.colHome{
+    margin: 0 auto;
+    .rowHome{
+        padding: 5px;
+        // display: block;
+        .colCarousel{
+            // padding-right: 0 !important;
+        }
+        .colUpdates{
+            // padding-left: 0 !important;
+            .card{
+                height: 100px;
+                color: black;
+                display: flex;
+                flex-direction: row;
+                img{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 70px !important;
+                    min-width: 70px;
+                }
+                .body {
+                    flex: 1;
+                    align-items: center;
+                    font-weight: 500;
+                    font-size: 16px;
+                    text-align: right;
+                  }
+            }
+        }
+    }
+}
+
+
+
+.navbarSub{
+    display: flex !important;
+    flex-direction: row;
+    justify-content: center;
+    font-family: $font_nav, sans-serif;
+    font-size: 14px;
+    a {
+      color: #333333;
+      text-decoration: none;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+}
+
+.colTrending, .colMain, .colOthers{
+    
+    text-align: center;
+    .colPHeading{
+        font-family: $font_nav, sans-serif;
+        font-size: 17px;
+    }
+}
+
+.sectionMain{
+    background-color: lightgreen;
+}
+.sectionSports{
+    background-color: lightpink;
+}
+.sectionTech{
+    background-color: aliceblue;
+}

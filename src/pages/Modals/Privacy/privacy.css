@@ -1,0 +1,26 @@
+.privacy {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #333;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+.privacy h1 {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px 0;
+}
+.privacy h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 20px 0 10px;
+}
+.privacy p {
+  margin: 10px 0;
+}
+.privacy ul, .privacy ol {
+  margin: 10px 0;
+  padding-left: 20px;
+}
