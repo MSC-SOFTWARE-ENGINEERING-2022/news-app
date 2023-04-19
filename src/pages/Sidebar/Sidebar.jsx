@@ -3,7 +3,7 @@
 const Sidebar = () => {
     return <div className="sidebar">
         <div className="sidebar-widget">
-            <h2 className="sw-title">In This Category</h2>
+            <h2 className="sw-title">Recently Viewed</h2>
             <div className="news-list">
                 <div className="nl-item">
                     <div className="nl-img">

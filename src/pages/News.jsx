@@ -49,12 +49,12 @@ const News = () => {
     }
 
     return <>
-      <h1>News - {topic}</h1>
-      <p>&copy; 2023 - New York Times Company</p>
+      {/* <h1>News - {topic}</h1> */}
+      {/* <p>&copy; 2023 - New York Times Company</p> */}
       {/* {newsItems.map((item, idx) => <p key={idx}>{JSON.stringify(item)}</p>)} */}
-      <select value={topic} onChange={handleSelectChange}>
+      {/* <select value={topic} onChange={handleSelectChange}>
           {sortAlphabets(defaultTopics).map(dt => <option key={dt} value={dt}>{capitalize(dt)}</option>)}
-      </select>        
+      </select>         */}
       {/* {isLoading && <Loader />}
       <Row>
         <Col md={9}>

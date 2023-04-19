@@ -10,10 +10,10 @@ const Topic = () => {
                 <div className="row">
                     <div className="col-lg-8">
                         <Multiple />
-                        <div className="sn-related">
+                        {/* <div className="sn-related">
                             <h2>Related News</h2>
-                            {/* <Related /> */}
-                        </div>
+                            <Related />
+                        </div> */}
                     </div>
                     <div className="col-lg-4">
                         <Sidebar />

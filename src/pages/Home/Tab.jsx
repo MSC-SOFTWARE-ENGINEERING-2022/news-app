@@ -88,10 +88,10 @@ const Tab = () => {
                       <a className="nav-link active" data-toggle="pill" href="#m-viewed">Most Viewed</a>
                   </li>
                   <li className="nav-item">
-                      <a className="nav-link" data-toggle="pill" href="#m-read">Most Read</a>
+                      <a className="nav-link" data-toggle="pill" href="#m-read">Most Recent</a>
                   </li>
                   <li className="nav-item">
-                      <a className="nav-link" data-toggle="pill" href="#m-recent">Most Recent</a>
+                      <a className="nav-link" data-toggle="pill" href="#m-recent">Recently viewed</a>
                   </li>
               </ul>
 

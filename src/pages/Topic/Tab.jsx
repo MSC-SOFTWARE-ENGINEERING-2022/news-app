@@ -19,16 +19,14 @@ const Tab = () => {
         </>
     }
     const sd = (idx) => {
-
-       
         return <div className="tn-news">
-                {
-                    isLoading ? <Loader />: <>
-                        {
-                            data[idx]? retrieve(data[idx]): 'No data'
-                        }
-                    </>
-                }
+            {
+                isLoading ? <Loader />: <>
+                    {
+                        data[idx]? retrieve(data[idx]): 'No data'
+                    }
+                </>
+            }
         </div>
     }
 

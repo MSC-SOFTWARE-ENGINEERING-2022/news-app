@@ -131,18 +131,13 @@ button.btn {
   background: #000000;
   border: 1px solid #000000;
 }
-
 button.btn:hover {
   color: #ffffff;
   background: #3d975f;
   border-color: #3d975f;
 }
 
-.col-md-6 {
-  max-width: none;
-}
-
-.col-md-4 {
+.col-md-6, .col-md-4 {
   max-width: none;
 }
 
@@ -153,51 +148,42 @@ button.btn:hover {
   padding: 2px 0;
   background: #000000;
 }
-
 .top-bar .tb-contact p {
   display: inline-block;
   margin: 0;
   color: #3d975f;
   font-size: 14px;
 }
-
 .top-bar .tb-contact p i {
   margin-right: 6px;
 }
-
 .top-bar .tb-contact p:first-child {
   margin-right: 15px;
 }
-
 .top-bar .tb-menu {
   font-size: 0;
   text-align: right;
 }
-
 .top-bar .tb-menu a {
   color: #3d975f !important;
   font-size: 14px;
   margin: 0 8px;
 }
-
 .top-bar .tb-menu a:hover {
   color: #ffffff !important;
 }
-
 .top-bar .tb-menu a:last-child {
   margin-right: 0;
 }
-
+.top-bar .tb-menu a:last-child::after {
+  display: none;
+}
 .top-bar .tb-menu a::after {
   position: absolute;
   content: "/";
   margin: 1px 0 0 6px;
   color: #3d975f;
   font-size: 14px;
-}
-
-.top-bar .tb-menu a:last-child::after {
-  display: none;
 }
 
 @media (max-width: 768px) {
@@ -231,25 +217,20 @@ button.btn:hover {
   color: #b2d6c0;
   font-size: 1.45em;
 }
-
 .brand .b-logo a img {
   max-width: 100%;
   max-height: 60px;
 }
-
 .brand .b-ads {
   overflow: hidden;
 }
-
 .brand .b-ads a img {
   max-width: 100%;
   max-height: 100%;
 }
-
 .brand .b-search {
   width: 100%;
 }
-
 .brand .b-search input[type=text] {
   width: 100%;
   height: 40px;
@@ -258,11 +239,9 @@ button.btn:hover {
   border: 1px solid #cccccc;
   border-radius: 4px;
 }
-
 .brand .b-search input[type=text]:focus {
   border-color: #3d975f;
 }
-
 .brand .b-search button {
   position: absolute;
   width: 40px;
@@ -274,7 +253,6 @@ button.btn:hover {
   color: #3d975f;
   border-radius: 0 4px 4px 0;
 }
-
 .brand .b-search button:hover {
   background: #3d975f;
   color: #ffffff;
