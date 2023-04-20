@@ -8,7 +8,7 @@ const FooterMenu = () => {
                 <CustomModal head="Privacy policy"/>
                 <CustomModal head="Cookies"/>
                 <CustomModal head="Accessibility help"/>
-                <CustomModal head="Contact us"/>
+                <a href="/contacts">Contact us</a>
             </div>
         </div>
     </div>

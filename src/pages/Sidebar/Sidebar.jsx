@@ -1,6 +1,16 @@
+import configs from "../../configs/configs";
+import { DEPE } from "../../configs/utils"
 
 
 const Sidebar = () => {
+    const {news_by_topic} = configs.links;
+    const elems = DEPE.getAllTopics().reduce((acc, curr) => {
+        const {cats, tags} = acc;
+            cats.push(<><a href={`${news_by_topic}/${curr.toLowerCase()}`}>{DEPE.capitalize(curr)}</a><span>({DEPE.randomNum(0, 231)})</span></>)
+            tags.push({name:curr.toUpperCase(), link:`${news_by_topic}/${curr.toLowerCase()}`})
+        return acc;
+    }, {cats:[], tags:[]})
+
     return <div className="sidebar">
         <div className="sidebar-widget">
             <h2 className="sw-title">Recently Viewed</h2>
@@ -209,33 +219,21 @@ const Sidebar = () => {
             <h2 className="sw-title">News Category</h2>
             <div className="category">
                 <ul>
-                    <li><a href="">Business</a><span>(98)</span></li>
-                    {/* <li><a href="">International</a><span>(87)</span></li> */}
-                    <li><a href="">Economics</a><span>(76)</span></li>
-                    <li><a href="">Politics</a><span>(65)</span></li>
-                    {/* <li><a href="">Lifestyle</a><span>(54)</span></li> */}
-                    <li><a href="">Technology</a><span>(43)</span></li>
-                    {/* <li><a href="">Trades</a><span>(32)</span></li> */}
+                    {elems.cats.map((el, idx) => <li key={idx}>{el}</li>)}
                 </ul>
             </div>
         </div>
 
-        <div className="sidebar-widget">
+        {/* <div className="sidebar-widget">
             <div className="image">
                 <a href="https://htmlcodex.com"><img src="img/ads-2.jpg" alt="Image" /></a>
             </div>
-        </div>
+        </div> */}
         
         <div className="sidebar-widget">
-            <h2 className="sw-title">Tags Cloud</h2>
+            <h2 className="sw-title">Tags</h2>
             <div className="tags">
-                <a href="">Business</a>
-                {/* <a href="">International</a> */}
-                <a href="">Economics</a>
-                <a href="">Politics</a>
-                {/* <a href="">Lifestyle</a> */}
-                <a href="">Technology</a>
-                {/* <a href="">Trades</a> */}
+            {elems.tags.map((el, idx) => <a key={idx} href={el.link}>{el.name}</a>)}
             </div>
         </div>
     </div>

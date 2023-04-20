@@ -134,6 +134,17 @@ button.btn:hover {
   border-color: #3d975f;
 }
 
+.col-lg-8:has(.divSpinner) {
+  border-radius: 10px;
+  min-height: 300px;
+  height: 60vh;
+  margin-bottom: 20px;
+}
+.col-lg-8:has(.divSpinner) .divSpinner {
+  background-color: #f8f8f8;
+  height: 95%;
+}
+
 .col-md-6, .col-md-4 {
   max-width: none;
 }
@@ -195,8 +206,8 @@ button.btn:hover {
 .brand {
   margin: 0;
   padding: 5px;
-  background: rgb(0, 0, 0);
-  background: radial-gradient(circle, rgb(0, 0, 0) 0%, rgb(0, 103, 87) 100%);
+  background: rgb(0, 14, 12);
+  background: radial-gradient(circle, rgb(0, 14, 12) 0%, rgb(0, 48, 42) 63%, rgb(1, 75, 63) 100%);
 }
 
 .brand .b-logo {
@@ -283,7 +294,7 @@ button.btn:hover {
 
 .nav-bar.nav-sticky {
   position: fixed;
-  top: 0;
+  top: 0px;
   width: 100%;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   z-index: 999;
@@ -713,7 +724,7 @@ button.btn:hover {
 }
 
 .breadcrumb-wrap .breadcrumb {
-  margin: 25px 0 0 0;
+  margin: 25px 0 0 10px;
   padding: 0;
   background: none;
 }
@@ -1252,6 +1263,10 @@ button:focus, .navbar-toggler:focus, .navbar-toggler:hover {
 /**********************************/
 /******** Topic CSS *******/
 /**********************************/
+.topicName {
+  padding-left: 10px;
+}
+
 .topic-news {
   position: relative;
   max-height: 80vh;
@@ -1313,4 +1328,54 @@ button:focus, .navbar-toggler:focus, .navbar-toggler:hover {
   border-radius: 10px;
   background: rgba(204, 204, 204, 0.5);
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.contact-form {
+  background: #fff;
+  margin-top: 10%;
+  margin-bottom: 6%;
+  width: 70%;
+}
+.contact-form .form-control {
+  border-radius: 1rem;
+}
+.contact-form .contact-image {
+  text-align: center;
+}
+.contact-form .contact-image img {
+  border-radius: 6rem;
+  width: 11%;
+  margin-top: -3%;
+  transform: rotate(29deg);
+}
+.contact-form form {
+  padding: 14%;
+}
+.contact-form form .row {
+  margin-bottom: -7%;
+}
+.contact-form h3 {
+  margin-bottom: 7%;
+  margin-top: -25%;
+  text-align: center;
+  color: #185f24;
+}
+.contact-form .btnContact {
+  width: 50%;
+  border: none;
+  border-radius: 1rem;
+  padding: 1.5%;
+  background: #185f24;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+}
+.contact-form .btnContactSubmit {
+  width: 50%;
+  border-radius: 1rem;
+  padding: 1.5%;
+  color: #fff;
+  background-color: #00cc6d;
+  border: none;
+  cursor: pointer;
 }

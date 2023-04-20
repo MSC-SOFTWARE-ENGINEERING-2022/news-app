@@ -4,3 +4,4 @@ export {default as NewsItem} from "./NewsItem.jsx";
 export {default as Contact} from "./Contact.jsx";
 export {default as Error} from "./Error.jsx";
 export {default as RecentRead} from "./RecentRead.jsx";
+export {default as Topic} from "./Topic/Topic.jsx";

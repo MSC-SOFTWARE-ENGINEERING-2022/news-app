@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import configs from '../../configs/configs';
+import { DEPE } from '../../configs/utils';
 
 const {brand, links, social_media} = configs;
 const {home, homeB, homeC, news, news_by_topic, news_by_id, contact_us, error} = links;
@@ -9,6 +10,13 @@ const NavMenu = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggle = () => setIsOpen(!isOpen);
+
+    const topicElems = <>{
+        DEPE.getAllTopics().map((tp, idx) => {
+            return <a key={idx} href={`${news_by_topic}/${tp}`} className="dropdown-item">{tp.slice(0,1).toUpperCase()}{tp.slice(1)}</a>
+        })
+    }</>
+    // console.log("topicElems", topicElems)
     
     return <div className="nav-bar sticky-top">
         <div className="container">
@@ -23,13 +31,12 @@ const NavMenu = () => {
                         <div className="nav-item dropdown">
                             <a href={news} className="nav-link dropdown-toggle" data-toggle="dropdown">News</a>
                             <div className="dropdown-menu">
-                                <a href={news} className="dropdown-item">All</a>
-                                <a href={`${news_by_topic}/politics`} className="dropdown-item">Politics</a>
-                                <a href={`${news_by_topic}/entertainment`} className="dropdown-item">Entertainment</a>
+                                {/* <a href={news} className="dropdown-item">All</a> */}
+                                {topicElems}
                             </div>
                         </div>
-                        <a href={`${news_by_id}?key=30`} className="nav-item nav-link">example30</a>
-                        <a href={`${news_by_id}?key=20`} className="nav-item nav-link">example20</a>
+                        {/* <a href={`${news_by_id}?key=30`} className="nav-item nav-link">example30</a>
+                        <a href={`${news_by_id}?key=20`} className="nav-item nav-link">example20</a> */}
                         <a href={contact_us} className="nav-item nav-link">Contact Us</a>
                     </div>
                     <div className="social ml-auto">

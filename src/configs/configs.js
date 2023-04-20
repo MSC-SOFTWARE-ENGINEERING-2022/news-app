@@ -5,6 +5,15 @@ const configs = {
         phone: "+254 701 02 0304",
         address: "P.O. Box 62-00200 NAIROBI, KENYA"
     },
+    topics: {
+        travel: "Travel",
+        business: "Business",
+        sports: "Sports",
+        politics: "Politics",
+        culture: "Culture",
+        education: "Education",
+        automobiles: "Automobiles"
+    },
     links: {
         home: "/",
         homeB: "/home",

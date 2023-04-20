@@ -1,5 +1,6 @@
 import React from 'react'
 import configs from '../../configs/configs';
+import { DEPE } from '../../configs/utils';
 
 
 
@@ -43,11 +44,9 @@ const FooterStart = () => {
                     <div className="footer-widget">
                         <h3 className="title">Quick Links</h3>
                         <ul>
-                            <li><a href={`${news_by_topic}/politics`}>Politics</a></li>
-                            <li><a href={`${news_by_topic}/business`}>Business</a></li>
-                            <li><a href={`${news_by_topic}/football`}>Football</a></li>
-                            <li><a href={`${news_by_topic}/technology`}>Technology</a></li>
-                            <li><a href={`${news_by_topic}/entertainment`}>Entertainment</a></li>
+                            {DEPE.getAllTopics().map((tp, idx) => {
+                                return <li key={idx}><a href={`${news_by_topic}/${tp.toLowerCase()}`}>{DEPE.capitalize(tp)}</a></li>
+                            })}
                         </ul>
                     </div>
                 </div>

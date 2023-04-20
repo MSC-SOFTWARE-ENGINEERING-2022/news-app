@@ -27,7 +27,7 @@
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Footer, CustomNavbar, ScrollBackToTop } from './components';
-import { Contact, Error, Home, News, NewsItem } from './pages';
+import { Contact, Error, Home, News, NewsItem, Topic } from './pages';
 
 // import './css/components/components.css';
 // import './css/custom/custom.css';
@@ -55,9 +55,9 @@ const App = () => {
         <Route path={home} element={<Home />} />
         <Route path={homeB} element={<Home />} />
         <Route path={homeC} element={<Home />} />
-        <Route path={news} element={<News />} />
-        <Route path={news_by_topic} element={<News />} />
-        <Route path={`${news_by_topic}/:topic`} element={<News />} />
+        <Route path={news} element={<Topic />} />
+        <Route path={news_by_topic} element={<Topic />} />
+        <Route path={`${news_by_topic}/:topic`} element={<Topic />} />
         <Route path={news_by_id} element={<NewsItem />} />
         <Route path={contact_us} element={<Contact />} />
         <Route path={error} element={<Error />} />

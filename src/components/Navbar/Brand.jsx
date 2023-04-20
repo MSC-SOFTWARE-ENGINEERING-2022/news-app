@@ -1,7 +1,8 @@
+import { useState } from "react";
 import configs from "../../configs/configs"
 
 const Brand = () => {
-    return <div className="brand">
+    return <div className='brand'>
         <div className="container">
             <div className="row align-items-center">
                 <div className="col-lg-3 col-md-4">

@@ -1,76 +1,27 @@
-import Slider from "react-slick";
-import {useState, useEffect} from 'react';
-import { fetchNews } from '../../api';
-import { Loader } from '../../components';
 
-const Multiple = () => {
-  const [data, setData] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+const Multiple = ({data}) => {
+  // console.log('data', data)
 
   const retrieve = (item) => {
-      const {headline, news_desk, pub_date, multimedia} = item;
-      return <> 
-      
+    const {headline, news_desk, pub_date, multimedia} = item;
+    const img_src = multimedia.length && multimedia.find(mu => mu.subType === "blog533").url
+    return <> 
       <div className="tp-img">
-          <img src={`http://www.nytimes.com/${multimedia.find(mu => mu.subType === "blog533").url}`} alt={headline.main} />
-          </div>
-          <div className="tp-title">
-              <a href="">{headline.main}</a>
-          </div>                            
-      </>
+        <img src={img_src && `http://www.nytimes.com/${img_src}`} alt={headline.main} />
+        </div>
+        <div className="tp-title">
+          <a href="">{headline.main}</a>
+        </div>                            
+    </>
   }
   const sd = (idx) => {
-
-     
-      return <div className="tp-news">
-              {
-                  isLoading ? <Loader />: <>
-                      {
-                          data[idx]? retrieve(data[idx]): 'No data'
-                      }
-                  </>
-              }
-      </div>
+      return <div className="tp-news">{<>{
+          data[idx]? retrieve(data[idx]): 'No data'
+        }</>
+      }</div>
   }
 
-  useEffect(() => {
-      setData([]);
-      setIsLoading(true);
-      setTimeout(() => {
-          fetchNews('politics')
-          .then((data) => {
-              console.log(data)
-              setData(data)
-          })
-          .catch((error) => console.log(error))
-          .finally(() => setIsLoading(false));
-      }, 2000)
-  }, [])
-
-
-
-
-
-
-
-    const settings = {
-        dots: true
-      };
   return <>
-    {/* <Slider {...settings}>
-      <div>
-        <img src="http://placekitten.com/g/400/200" />
-      </div>
-      <div>
-        <img src="http://placekitten.com/g/400/200" />
-      </div>
-      <div>
-        <img src="http://placekitten.com/g/400/200" />
-      </div>
-      <div>
-        <img src="http://placekitten.com/g/400/200" />
-      </div>
-    </Slider> */}
     <div className="topic-news scroll-inner">
       <div className="container">
         <div className="row">
