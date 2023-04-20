@@ -448,12 +448,12 @@ button.btn {
         img {
             width: 100%;
         }
-        &:hover{
-            img {
-                filter: blur(1.5px);
-                -webkit-filter: blur(1.5px);
-            }
-        }
+        // &:hover{
+        //     img {
+        //         filter: blur(1.5px);
+        //         -webkit-filter: blur(1.5px);
+        //     }
+        // }
     }
     .tn-title {
         position: absolute;
@@ -472,8 +472,12 @@ button.btn {
             font-size: 14px;
             font-weight: 400;
             transition: .3s;
+            background-color: rgba(128, 128, 128, 0.281);
+            padding: 2px;
+            border-radius: 5px;
             &:hover {
-                color: #3d975f;
+                color: #75c995;
+                background-color: rgba(128, 128, 128, 0.493);
             }
         }
     }
@@ -574,8 +578,12 @@ button.btn {
             font-size: 15px;
             font-weight: 400;
             transition: .3s;
+            background-color: rgba(128, 128, 128, 0.281);
+            padding: 2px;
+            border-radius: 5px;
             &:hover {
-                color: #3d975f;
+                color: #75c995;
+                background-color: rgba(128, 128, 128, 0.493);
             }
         }
     }

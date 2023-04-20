@@ -401,10 +401,6 @@ button.btn:hover {
 .top-news .tn-img img {
   width: 100%;
 }
-.top-news .tn-img:hover img {
-  filter: blur(1.5px);
-  -webkit-filter: blur(1.5px);
-}
 .top-news .tn-title {
   position: absolute;
   top: 0;
@@ -423,9 +419,13 @@ button.btn:hover {
   font-size: 14px;
   font-weight: 400;
   transition: 0.3s;
+  background-color: rgba(128, 128, 128, 0.281);
+  padding: 2px;
+  border-radius: 5px;
 }
 .top-news .tn-title a:hover {
-  color: #3d975f;
+  color: #75c995;
+  background-color: rgba(128, 128, 128, 0.493);
 }
 .top-news .tn-left {
   margin-bottom: 30px;
@@ -523,9 +523,13 @@ button.btn:hover {
   font-size: 15px;
   font-weight: 400;
   transition: 0.3s;
+  background-color: rgba(128, 128, 128, 0.281);
+  padding: 2px;
+  border-radius: 5px;
 }
 .cat-news .cn-title a:hover {
-  color: #3d975f;
+  color: #75c995;
+  background-color: rgba(128, 128, 128, 0.493);
 }
 .cat-news .slick-prev, .cat-news .slick-next {
   top: -62px;

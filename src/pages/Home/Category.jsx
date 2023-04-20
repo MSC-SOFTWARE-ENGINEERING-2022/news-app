@@ -57,7 +57,7 @@ const Category = () => {
         return <> 
             <div className="cn-img">
                 <img src={`http://www.nytimes.com/${multimedia.find(mu => mu.subType === "blog533").url}`} alt={headline.main} />            
-            </div>
+            
             <div className="cn-title">
                 <a href="">
                     {headline.main}
@@ -66,7 +66,8 @@ const Category = () => {
                     <br />
                     <span className="addedInfo date">{pub_date.split("T")[0]}</span>
                 </a>
-            </div>                            
+            </div>
+            </div>                           
         </>
     }
     const sd = (idx, datos) => {
