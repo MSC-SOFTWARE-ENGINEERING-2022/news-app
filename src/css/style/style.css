@@ -424,7 +424,7 @@ button.btn:hover {
   border-radius: 5px;
 }
 .top-news .tn-title a:hover {
-  color: #75c995;
+  color: #beffd7;
   background-color: rgba(128, 128, 128, 0.493);
 }
 .top-news .tn-left {
@@ -528,7 +528,7 @@ button.btn:hover {
   border-radius: 5px;
 }
 .cat-news .cn-title a:hover {
-  color: #75c995;
+  color: #beffd7;
   background-color: rgba(128, 128, 128, 0.493);
 }
 .cat-news .slick-prev, .cat-news .slick-next {

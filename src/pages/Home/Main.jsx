@@ -8,11 +8,11 @@ const Main = () => {
     const [isLoading, setIsLoading] = useState(false);
 
     const retrieve = (item) => {
-        const {headline, news_desk, pub_date, multimedia, byline} = item;
+        const {headline, news_desk, pub_date, multimedia, byline, _id} = item;
         return <> 
             <img src={`http://www.nytimes.com/${multimedia.find(mu => mu.subType === "blog533").url}`} alt={headline.main} />
             <div className="tn-title">
-                <a href="">
+                <a href={`/news/id?key=${_id}`}>
                     {headline.main}
                     <br />
                     <span className="addedInfo author">{byline.original}</span>

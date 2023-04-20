@@ -7,14 +7,14 @@ const Tab = () => {
     const [isLoading, setIsLoading] = useState(false);
 
     const retrieve = (item) => {
-        const {headline, news_desk, pub_date, multimedia} = item;
+        const {headline, news_desk, pub_date, multimedia, _id} = item;
         return <> 
         
         <div className="tn-img">
             <img src={`http://www.nytimes.com/${multimedia.find(mu => mu.subType === "blog533").url}`} alt={headline.main} />
             </div>
             <div className="tn-title">
-                <a href="">{headline.main}</a>
+                <a href={`/news/id?key=${_id}`}>{headline.main}</a>
             </div>                            
         </>
     }

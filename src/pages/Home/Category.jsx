@@ -53,13 +53,13 @@ const Category = () => {
     }
 
     const retrieve = (item) => {
-        const {headline, news_desk, pub_date, multimedia, byline} = item;
+        const {headline, news_desk, pub_date, multimedia, byline, _id} = item;
         return <> 
             <div className="cn-img">
                 <img src={`http://www.nytimes.com/${multimedia.find(mu => mu.subType === "blog533").url}`} alt={headline.main} />            
             
             <div className="cn-title">
-                <a href="">
+                <a href={`/news/id?key=${_id}`}>
                     {headline.main}
                     <br />
                     <span className="addedInfo author">{byline.original}</span>
