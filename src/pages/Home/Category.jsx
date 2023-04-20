@@ -5,6 +5,13 @@ import { Loader } from '../../components';
 
 const Category = () => {
     const [data, setData] = useState([]);
+    const [dataSports, setDataSports] = useState([]);
+    const [dataCulture, setDataCulture] = useState([]);
+    const [dataBusiness, setDataBusiness] = useState([]);
+    const [dataEducation, setDataEducation] = useState([]);
+    const [dataTravel, setDataTravel] = useState([]);
+    const [dataPolitics, setDataPolitics] = useState([]);
+    const [dataAutomobiles, setDataAutomobiles] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
     const settings = {
@@ -46,22 +53,28 @@ const Category = () => {
     }
 
     const retrieve = (item) => {
-        const {headline, news_desk, pub_date, multimedia} = item;
+        const {headline, news_desk, pub_date, multimedia, byline} = item;
         return <> 
             <div className="cn-img">
                 <img src={`http://www.nytimes.com/${multimedia.find(mu => mu.subType === "blog533").url}`} alt={headline.main} />            
             </div>
             <div className="cn-title">
-                <a href="">{headline.main}</a>
+                <a href="">
+                    {headline.main}
+                    <br />
+                    <span className="addedInfo author">{byline.original}</span>
+                    <br />
+                    <span className="addedInfo date">{pub_date.split("T")[0]}</span>
+                </a>
             </div>                            
         </>
     }
-    const sd = (idx) => {
+    const sd = (idx, datos) => {
         return <div className="col-md-6">
             {
                 isLoading ? <Loader />: <>
                     {
-                        data[idx]? retrieve(data[idx]): 'No data'
+                        datos[idx]? retrieve(datos[idx]): 'No data'
                     }
                 </>
             }
@@ -79,7 +92,62 @@ const Category = () => {
             .catch((error) => console.log(error))
             .finally(() => setIsLoading(false));
         }, 2000)
-        
+    }, [])
+
+    useEffect(() => {
+        setDataTravel([]);
+        setIsLoading(true);
+        setTimeout(() => {
+            fetchNews('travel')
+            .then((data) => {
+                console.log(data)
+                setDataTravel(data)
+            })
+            .catch((error) => console.log(error))
+            .finally(() => setIsLoading(false));
+        }, 2000)
+    }, [])
+
+    useEffect(() => {
+        setDataSports([]);
+        setIsLoading(true);
+        setTimeout(() => {
+            fetchNews('sports')
+            .then((data) => {
+                console.log(data)
+                setDataSports(data)
+            })
+            .catch((error) => console.log(error))
+            .finally(() => setIsLoading(false));
+        }, 2000)
+    }, [])
+
+    useEffect(() => {
+        setDataCulture([]);
+        setIsLoading(true);
+        setTimeout(() => {
+            fetchNews('culture')
+            .then((data) => {
+                console.log(data)
+                setDataCulture(data)
+            })
+            .catch((error) => console.log(error))
+            .finally(() => setIsLoading(false));
+        }, 2000)
+    }, [])
+
+    useEffect(() => {
+        setDataBusiness([]);
+        setIsLoading(true);
+        setTimeout(() => {
+            fetchNews('business')
+            .then((data) => {
+                console.log(data)
+                setDataBusiness(data)
+            })
+            .catch((error) => console.log(error))
+            .finally(() => setIsLoading(false));
+        }, 2000)
     }, [])
 
     return <>
@@ -89,17 +157,17 @@ const Category = () => {
                     <div className="col-md-6">
                         <h2>Sports</h2>
                         <Slider {...settings}>
-                            {sd(1)}
-                            {sd(2)}
-                            {sd(3)}
+                            {sd(1, dataSports)}
+                            {sd(2, dataSports)}
+                            {sd(3, dataSports)}
                         </Slider>
                     </div>
                     <div className="col-md-6">
-                        <h2>Technology</h2>
+                        <h2>Politics</h2>
                         <Slider {...settings}>
-                            {sd(3)}
-                            {sd(4)}
-                            {sd(5)}
+                            {sd(3, data)}
+                            {sd(4, data)}
+                            {sd(5, data)}
                         </Slider>
                     </div>
                 </div>
@@ -112,17 +180,17 @@ const Category = () => {
                     <div className="col-md-6">
                         <h2>Business</h2>
                         <Slider {...settings}>
-                            {sd(6)}
-                            {sd(7)}
-                            {sd(5)}
+                            {sd(6, dataBusiness)}
+                            {sd(7, dataBusiness)}
+                            {sd(5, dataBusiness)}
                         </Slider>
                     </div>
                     <div className="col-md-6">
-                        <h2>Entertainment</h2>
+                        <h2>Culture</h2>
                         <Slider {...settings}>
-                            {sd(2)}
-                            {sd(7)}
-                            {sd(8)}
+                            {sd(2, dataCulture)}
+                            {sd(7, dataCulture)}
+                            {sd(8, dataCulture)}
                         </Slider>
                     </div>
                 </div>

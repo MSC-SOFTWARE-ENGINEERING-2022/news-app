@@ -469,7 +469,7 @@ button.btn {
             display: block;
             width: 100%;
             color: #ffffff;
-            font-size: 18px;
+            font-size: 14px;
             font-weight: 400;
             transition: .3s;
             &:hover {
@@ -480,7 +480,7 @@ button.btn {
     .tn-left {
         margin-bottom: 30px;
         .tn-title a {
-            font-size: 30px;
+            font-size: 25px;
             font-weight: 600;
         }
     }
@@ -571,7 +571,7 @@ button.btn {
             display: block;
             width: 100%;
             color: #ffffff;
-            font-size: 18px;
+            font-size: 15px;
             font-weight: 400;
             transition: .3s;
             &:hover {
@@ -1346,7 +1346,7 @@ button:focus, .navbar-toggler:focus, .navbar-toggler:hover{
 }
 .topic-news {
     position: relative;
-    max-height: 80vh;
+    max-height: 90vh;
     margin-bottom: 20px;
     overflow: auto;
     .col-md-12 {
@@ -1467,5 +1467,35 @@ button:focus, .navbar-toggler:focus, .navbar-toggler:hover{
         background-color: #00cc6d;
         border: none;
         cursor: pointer;
+    }
+}
+
+
+.single-content{
+    // min-height: 30vh;
+    height: fit-content !important;
+    .divSpinner{
+        height: 30vh !important;
+    }
+    a {
+        color: #337e40;
+        &:hover{
+            color: #0000a8;
+        }
+    }
+}
+
+
+.addedInfo {
+    // padding: 0 !important;
+    // color: #030e00;
+    &.date, &.author{
+        font-size: 11px;
+    }
+    &.date{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    &.author{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
 }

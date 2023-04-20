@@ -420,7 +420,7 @@ button.btn:hover {
   display: block;
   width: 100%;
   color: #ffffff;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 400;
   transition: 0.3s;
 }
@@ -431,7 +431,7 @@ button.btn:hover {
   margin-bottom: 30px;
 }
 .top-news .tn-left .tn-title a {
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 600;
 }
 .top-news .tn-right {
@@ -520,7 +520,7 @@ button.btn:hover {
   display: block;
   width: 100%;
   color: #ffffff;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 400;
   transition: 0.3s;
 }
@@ -1269,7 +1269,7 @@ button:focus, .navbar-toggler:focus, .navbar-toggler:hover {
 
 .topic-news {
   position: relative;
-  max-height: 80vh;
+  max-height: 90vh;
   margin-bottom: 20px;
   overflow: auto;
 }
@@ -1378,4 +1378,28 @@ button:focus, .navbar-toggler:focus, .navbar-toggler:hover {
   background-color: #00cc6d;
   border: none;
   cursor: pointer;
+}
+
+.single-content {
+  height: -moz-fit-content !important;
+  height: fit-content !important;
+}
+.single-content .divSpinner {
+  height: 30vh !important;
+}
+.single-content a {
+  color: #337e40;
+}
+.single-content a:hover {
+  color: #0000a8;
+}
+
+.addedInfo.date, .addedInfo.author {
+  font-size: 11px;
+}
+.addedInfo.date {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.addedInfo.author {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

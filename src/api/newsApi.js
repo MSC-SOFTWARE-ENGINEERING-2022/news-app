@@ -6,7 +6,7 @@ const fetchNews = async (query = '') => {
     const response = await fetch(url);
     const data = await response.json();
     // console.log("data", data);
-    // console.log("response", data.response);
+    console.log("response", data.response);
     return data.response.docs;
 };
 

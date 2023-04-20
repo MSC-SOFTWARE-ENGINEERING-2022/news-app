@@ -1,15 +1,48 @@
-import {useState, useEffect} from 'react';
-import { useParams } from 'react-router-dom';
+import {useState, useEffect, createContext, useContext} from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import { v4 as uuid } from 'uuid';
 import { fetchNews } from '../../api';
 import { Breadcrumb, Loader } from "../../components";
 import { DEPE } from '../../configs/utils';
+import LocalStorageCtx from '../../contexts/LocalStorage';
 import Sidebar from "../Sidebar/Sidebar";
 import Multiple from "./Multiple";
+
+// const MyContext = createContext('default value');
 
 const Topic = () => {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const { topic='politics' } = useParams();
+    const navigate = useNavigate();
+    const ctx = useContext(LocalStorageCtx);
+
+    const [selectedNewsItem, setSelectedNewsItem] = useState(null);
+
+    const handleNewsItemClick = (item) => {
+        console.log('clickedItem', item)
+        navigate(`/news/id?key=${item._id}`)
+
+
+        setSelectedNewsItem(item);
+
+        
+        ctx.localstore.push(item);
+
+        const itemObj = (itm) => ({
+            key: itm._id,
+            id: uuid(),
+            timestamp: Date.now(),
+            item: itm
+        })
+        if(!localStorage.readNewsItems2){
+            localStorage.setItem('readNewsItems2', JSON.stringify([itemObj(item)]))
+        }else{
+            const storedItems = JSON.parse(localStorage.readNewsItems2);
+            console.log("str", storedItems)
+        }
+        // <RecentRead readItem={selectedNewsItem}/>
+    };
 
     const crumbs = [
         {name: "Home", link: "/"},
@@ -33,6 +66,7 @@ const Topic = () => {
     }, [])
 
     return <>
+    {/* <LocalStorageCtx.Provider value="Hello from the parent"> */}
         <Breadcrumb crumbs={crumbs} />
         <div className="single-news">
             <div className="container">
@@ -41,7 +75,7 @@ const Topic = () => {
                         <h4 className='topicName'>{topic.toUpperCase()}</h4>
                         
                         {/* <Loader /> */}
-                        {isLoading? <Loader />: <Multiple data={data}/>}
+                        {isLoading? <Loader />: <Multiple data={data} selectItem={handleNewsItemClick}/>}
                         
                         {/* <div className="sn-related">
                             <h2>Related News</h2>
@@ -49,11 +83,12 @@ const Topic = () => {
                         </div> */}
                     </div>
                     <div className="col-lg-4">
-                        <Sidebar />
+                        <Sidebar recentRead={selectedNewsItem} dummyData={topic} selectItem={handleNewsItemClick}/>
                     </div>
                 </div>
             </div>
         </div>
+        {/* </LocalStorageCtx.Provider> */}
     </>
 }
 

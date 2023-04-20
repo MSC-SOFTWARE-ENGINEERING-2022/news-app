@@ -35,8 +35,6 @@ const NavMenu = () => {
                                 {topicElems}
                             </div>
                         </div>
-                        {/* <a href={`${news_by_id}?key=30`} className="nav-item nav-link">example30</a>
-                        <a href={`${news_by_id}?key=20`} className="nav-item nav-link">example20</a> */}
                         <a href={contact_us} className="nav-item nav-link">Contact Us</a>
                     </div>
                     <div className="social ml-auto">

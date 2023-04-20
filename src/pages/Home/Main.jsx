@@ -8,11 +8,17 @@ const Main = () => {
     const [isLoading, setIsLoading] = useState(false);
 
     const retrieve = (item) => {
-        const {headline, news_desk, pub_date, multimedia} = item;
+        const {headline, news_desk, pub_date, multimedia, byline} = item;
         return <> 
             <img src={`http://www.nytimes.com/${multimedia.find(mu => mu.subType === "blog533").url}`} alt={headline.main} />
             <div className="tn-title">
-                <a href="">{headline.main}</a>
+                <a href="">
+                    {headline.main}
+                    <br />
+                    <span className="addedInfo author">{byline.original}</span>
+                    <br />
+                    <span className="addedInfo date">{pub_date.split("T")[0]}</span>
+                </a>
             </div>                            
         </>
     }

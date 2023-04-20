@@ -5,7 +5,7 @@ import Related from "./Related";
 
 const Single = () => {
     return <>
-        <Breadcrumb />
+        {/* <Breadcrumb /> */}
         <div className="single-news">
             <div className="container">
                 <div className="row">
