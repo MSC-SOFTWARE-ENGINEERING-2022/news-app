@@ -14,13 +14,13 @@ const NavMenu = () => {
     // console.log("localContent", localContent);
 
     const changeEntity = (item) => {
-        console.log(item)
+        // console.log(item)
         setLocalContent((obj) => ({...localContent, entity: DEPE.getAttribs(item, 'entity')}));
     }
 
     const changeTopic = (item) => {
         setLocalContent((obj) => ({...localContent, entity:"news", topic: DEPE.getAttribs(item, 'topic')}));
-        console.log("localContent-nav", localContent);
+        // console.log("localContent-nav", localContent);
     }
 
     // const changeCurrent = (item) => {

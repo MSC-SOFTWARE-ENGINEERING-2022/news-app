@@ -3,8 +3,6 @@ import configs from '../../configs/configs';
 import { DEPE } from '../../configs/utils';
 import LocalStorageCtx from '../../contexts/LocalStorage';
 
-
-
 const FooterStart = () => {
     const {email, phone, address} = configs.contacts;
     const {home, news, news_by_topic} = configs.links;

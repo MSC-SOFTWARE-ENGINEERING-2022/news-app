@@ -1,10 +1,8 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+
 import { SingleModal } from "../../components";
 
 const Multiple = ({data, selectItem}) => {
   // console.log('data', data)
-  // const navigate = useNavigate();
 
   const retrieve = (item) => {
     return <SingleModal elem={item} place="multiple"/> 

@@ -39,7 +39,7 @@ const Main = () => {
         setTimeout(() => {
             fetchNews('politics')
             .then((data) => {
-                console.log(data)
+                // console.log(data)
                 setData(data)
             })
             .catch((error) => console.log(error))

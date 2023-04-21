@@ -1,4 +1,3 @@
-import { useState } from "react";
 import configs from "../../configs/configs"
 
 const Brand = () => {

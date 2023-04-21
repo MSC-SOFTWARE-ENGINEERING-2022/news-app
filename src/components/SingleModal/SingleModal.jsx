@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import LocalStorageCtx from '../../contexts/LocalStorage';
-import Content from '../../pages/Single/Content';
+import LocalStorageCtx from '../../contexts/LocalStorage.jsx';
+import Content from '../../pages/Single/Content.jsx';
 
 const SingleModal = (args) => {
     const {elem, place} = args;
@@ -36,7 +36,7 @@ const SingleModal = (args) => {
           }
           return {...curr, openedItems:updateOpened};
         })
-        console.log('localstorage', JSON.parse(localStorage.openedNewsItems));
+        // console.log('localstorage', JSON.parse(localStorage.openedNewsItems));
       }
     };
 

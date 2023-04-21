@@ -52,10 +52,7 @@ const Category = () => {
         ]
     }
 
-    const retrieve = (item) => {
-        const {headline, news_desk, pub_date, multimedia, byline, _id} = item;
-        return <SingleModal elem={item} place="category" />
-    }
+    const retrieve = (item) => <SingleModal elem={item} place="category" />
     const sd = (idx, datos) => {
         return <div className="col-md-6">
             {
