@@ -75,7 +75,7 @@ const Sidebar = ({topic='politics'}) => {
                 </> || 'Checking for recent items'}
                 {!isLoading && data.length < 1 && "No recent items"}
             </div>
-            <button class="clearRecent btn btn-outline-secondary btn-sm btn-block" onClick={clearRecent}>Clear</button>
+            <button className="clearRecent btn btn-outline-secondary btn-sm btn-block" onClick={clearRecent}>Clear</button>
         </div>
 
         <div className="sidebar-widget">
