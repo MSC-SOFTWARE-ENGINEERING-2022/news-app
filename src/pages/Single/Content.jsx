@@ -1,37 +1,17 @@
-import { useState, useEffect, useContext } from "react";
-import { searchNews } from "../../api";
+import { useState, useEffect} from "react";
 
 import { Loader } from "../../components";
-import LocalStorageCtx from "../../contexts/LocalStorage";
 
 const Content = ({newsitem}) => {
     const item = newsitem;
-    // const [item, setItem] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
-
-    // const url = new URL(window.location.href);
-    // const params = new URLSearchParams(url.search);
-    // const key = params.getAll('key')[0];
-
-    const {localContent} = useContext(LocalStorageCtx);
-    // console.log("localContent", localContent);
 
     useEffect(() => {
         // setItem(null);
         setIsLoading(true);
-        setTimeout(() => {
-            setIsLoading(false);
-            // searchNews(localContent.news_id)
-            //     .then((data) => {
-            //         // console.log("item", data[0])
-            //         setItem(data[0])
-            //     } )
-            //     .catch((error) => console.log(error))
-            //     .finally(() => setIsLoading(false));
-        }, 2000)
+        setTimeout(() => setIsLoading(false), 2000)
     }, [])
 
-    // const img_src = multimedia.length && multimedia.find(mu => mu.subType === "blog533").url
     const getImg = (itm) => itm.multimedia.length && itm.multimedia.find(mu => mu.subType === "blog533").url
 
     return <div className="sn-container single-content">

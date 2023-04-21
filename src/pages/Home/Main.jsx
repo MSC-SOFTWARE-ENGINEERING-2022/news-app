@@ -2,16 +2,15 @@ import {useState, useEffect} from 'react';
 import Slider from "react-slick";
 import { fetchNews } from '../../api';
 import { Loader, SingleModal } from '../../components';
-import Single from '../Single/Single';
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Main = () => {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
-    const retrieve = (item) => {
-        const {headline, news_desk, pub_date, multimedia, byline, _id} = item;
-        return <SingleModal elem={item} place="top" />
-    }
+    const retrieve = (item) => <SingleModal elem={item} place="top" />
     const sd = (idx) => {
         return <div className="col-md-6">
             <div className="tn-img">
@@ -49,7 +48,6 @@ const Main = () => {
         
     }, [])
     
-
     return <div className="top-news">
         <div className="container">
             <div className="row">

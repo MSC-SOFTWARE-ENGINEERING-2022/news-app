@@ -6,10 +6,7 @@ const Tab = () => {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
-    const retrieve = (item) => {
-        const {headline, news_desk, pub_date, multimedia, _id} = item;
-        return <SingleModal elem={item} place="tab" />
-    }
+    const retrieve = (item) => <SingleModal elem={item} place="tab" />
     const sd = (idx) => {
         return <div className="tn-news">
             {

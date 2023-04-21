@@ -1,4 +1,4 @@
-import React, { useEffect, useState, use } from 'react'
+import React, { useState } from 'react'
 import { CustomNavbar, Footer, ScrollBackToTop } from '../components'
 import LocalStorageCtx from '../contexts/LocalStorage'
 
@@ -16,12 +16,13 @@ const contentObj = {
     error: <Error />
 }
 
-const Main = ({entity}) => {
+const Super = ({entity}) => {
     const [localContent, setLocalContent] = useState({
         entity: entity,
         lang: "es",
         topic: "politics",
-        news_id: "22"
+        news_id: "22",
+        openedItems: []
     });
 
     const checkEntity = (entity, elem) => {
@@ -37,4 +38,4 @@ const Main = ({entity}) => {
     </LocalStorageCtx.Provider>
 }
 
-export default Main;
+export default Super;

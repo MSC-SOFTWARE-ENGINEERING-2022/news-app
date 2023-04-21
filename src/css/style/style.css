@@ -133,6 +133,17 @@ button.btn:hover {
   background: #3d975f;
   border-color: #3d975f;
 }
+button.btn.clearRecent {
+  color: #ffffff;
+  background: #727272;
+  border: none;
+  padding: 2px;
+  font-size: 13px;
+}
+button.btn.clearRecent:hover {
+  color: #ffffff;
+  background: #535353;
+}
 
 .col-lg-8:has(.divSpinner) {
   border-radius: 10px;
@@ -880,7 +891,7 @@ button.btn:hover {
 }
 .sidebar .sidebar-widget h2.sw-title {
   color: #000000;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   padding-bottom: 15px;
   border-bottom: 3px double #000000;
   font-size: 20px;

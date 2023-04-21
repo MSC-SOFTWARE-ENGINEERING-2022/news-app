@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import LocalStorageCtx from '../../contexts/LocalStorage';
 import Content from '../../pages/Single/Content';
 
 const SingleModal = (args) => {
-    // console.log(args.elem.headline, args.elem.multimedia.find(mu => mu.subType === "blog533"));
     const {elem, place} = args;
+
+    const {localContent, setLocalContent} = useContext(LocalStorageCtx);
     
     const {headline, news_desk, pub_date, multimedia, _id, byline } = elem;
     const img_src = multimedia.length 
@@ -14,7 +16,29 @@ const SingleModal = (args) => {
 
     const [modal, setModal] = useState(false);
 
-    const toggle = () => setModal(!modal);
+    const toggle = () => {
+      setModal(!modal)
+      if(!modal){
+        setLocalContent((curr) => {
+          const elemObj = {timestamp:Date.now(), newsitem: elem};
+          const updateOpened = [
+            elemObj,
+            ...curr.openedItems,
+          ]
+
+          if(!localStorage.openedNewsItems){
+            localStorage.setItem('openedNewsItems', JSON.stringify(updateOpened));
+          }else{
+            const present = JSON.parse(localStorage.openedNewsItems);
+            const filtered = present.filter(pr => pr.newsitem._id !== _id);
+            const merged = [elemObj, ...filtered]
+            localStorage.setItem('openedNewsItems', JSON.stringify(merged));
+          }
+          return {...curr, openedItems:updateOpened};
+        })
+        console.log('localstorage', JSON.parse(localStorage.openedNewsItems));
+      }
+    };
 
     const places = {
       sidebar: <><div className="nl-img">

@@ -1,7 +1,6 @@
 import configs from "../../configs/configs";
 import CustomModal from "../CustomModal/CustomModal";
 
-
 const TopBar = () => {
     return <div className="top-bar">
         <div className="container">

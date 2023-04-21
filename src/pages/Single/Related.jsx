@@ -92,53 +92,6 @@ const Related = () => {
         {sd(4)}
         {sd(5)}
     </Slider>
-        {/* <Slider {...settingsB}> */}
-        <div className="row sn-slider">
-        
-        <Slider {...settings}>
-            {sd(1)}
-            {sd(2)}
-            {sd(3)}
-        </Slider>
-            {/* {sd(1)}
-            {sd(2)}
-            {sd(3)}
-            {sd(4)}
-            {sd(5)} */}
-            {/* <div className="col-md-4">
-                <div className="sn-img">
-                    <img src="img/news-350x223-1.jpg" />
-                    <div className="sn-title">
-                        <a href="">Interdum et fames ac ante</a>
-                    </div>
-                </div>
-            </div>
-            <div className="col-md-4">
-                <div className="sn-img">
-                    <img src="img/news-350x223-2.jpg" />
-                    <div className="sn-title">
-                        <a href="">Interdum et fames ac ante</a>
-                    </div>
-                </div>
-            </div>
-            <div className="col-md-4">
-                <div className="sn-img">
-                    <img src="img/news-350x223-3.jpg" />
-                    <div className="sn-title">
-                        <a href="">Interdum et fames ac ante</a>
-                    </div>
-                </div>
-            </div>
-            <div className="col-md-4">
-                <div className="sn-img">
-                    <img src="img/news-350x223-4.jpg" />
-                    <div className="sn-title">
-                        <a href="">Interdum et fames ac ante</a>
-                    </div>
-                </div>
-            </div> */}
-        </div>
-        {/* </Slider> */}
 }
 
 export default Related
