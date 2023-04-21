@@ -37,4 +37,4 @@ const Main = ({entity}) => {
     </LocalStorageCtx.Provider>
 }
 
-export default Main
+export default Main;

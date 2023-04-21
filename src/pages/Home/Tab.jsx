@@ -11,16 +11,14 @@ const Tab = () => {
         return <SingleModal elem={item} place="tab" />
     }
     const sd = (idx) => {
-
-       
         return <div className="tn-news">
-                {
-                    isLoading ? <Loader />: <>
-                        {
-                            data[idx]? retrieve(data[idx]): 'No data'
-                        }
-                    </>
-                }
+            {
+                isLoading ? <Loader />: <>
+                    {
+                        data[idx]? retrieve(data[idx]): 'No data'
+                    }
+                </>
+            }
         </div>
     }
 
@@ -30,7 +28,7 @@ const Tab = () => {
         setTimeout(() => {
             fetchNews('politics')
             .then((data) => {
-                console.log(data)
+                // console.log(data)
                 setData(data)
             })
             .catch((error) => console.log(error))

@@ -25,6 +25,15 @@ const Main = () => {
             </div>
         </div>
     }
+    const settings = {
+        className: "row tn-slider",
+        autoplay: true,
+        // infinite: true,
+        dots: true,
+        // slidesToShow: 1,
+        // slidesToScroll: 1,
+        speed: 500,
+    }
     useEffect(() => {
         setData([]);
         setIsLoading(true);
@@ -45,14 +54,15 @@ const Main = () => {
         <div className="container">
             <div className="row">
                 <div className="col-md-6 tn-left">
-                    <Slider className="row tn-slider">
+                    <Slider {...settings}>
                         {sd(1)}
                         {sd(2)}
+                        {sd(3)}
                     </Slider>
                 </div>
                 <div className="col-md-6 tn-right">
                     <div className="row">
-                        {sd(3)}
+                        {sd(8)}
                         {sd(4)}
                         {sd(5)}
                         {sd(6)}
