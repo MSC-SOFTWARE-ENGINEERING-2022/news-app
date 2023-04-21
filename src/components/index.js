@@ -6,3 +6,4 @@ export {default as CustomLayout} from "./Layout.jsx";
 export {default as Breadcrumb} from "./Breadcrumb.jsx";
 export {default as ScrollBackToTop} from "./ScrollBackToTop.jsx";
 export {default as CustomModal} from "./CustomModal/CustomModal.jsx";
+export {default as SingleModal} from "./SingleModal/SingleModal.jsx";

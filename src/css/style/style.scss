@@ -468,7 +468,7 @@ button.btn {
         a {
             display: block;
             width: 100%;
-            color: #ffffff;
+            color: #ffffff !important;
             font-size: 14px;
             font-weight: 400;
             transition: .3s;
@@ -476,7 +476,7 @@ button.btn {
             padding: 2px;
             border-radius: 5px;
             &:hover {
-                color: #beffd7;
+                color: #beffd7 !important;
                 background-color: rgba(128, 128, 128, 0.493);
             }
         }
@@ -574,7 +574,7 @@ button.btn {
         a {
             display: block;
             width: 100%;
-            color: #ffffff;
+            color: #ffffff !important;
             font-size: 15px;
             font-weight: 400;
             transition: .3s;
@@ -582,7 +582,7 @@ button.btn {
             padding: 2px;
             border-radius: 5px;
             &:hover {
-                color: #beffd7;
+                color: #beffd7 !important;
                 background-color: rgba(128, 128, 128, 0.493);
             }
         }
@@ -677,7 +677,7 @@ button.btn {
 }
 
 .tab-news .tn-title a:hover {
-    color: #3d975f;
+    color: #3d975f !important;
 }
 
 
@@ -775,7 +775,7 @@ button.btn {
 }
 
 .main-news .mn-list ul li a:hover {
-    color: #3d975f;
+    color: #3d975f !important;
 }
 
 
@@ -1046,7 +1046,7 @@ button.btn {
                     font-weight: 400;
                     transition: all .3s;
                     &:hover {
-                        color: #3d975f;
+                        color: #3d975f !important;
                     }
                 }
             }
@@ -1066,7 +1066,7 @@ button.btn {
                 color: #000000;
                 line-height: 23px;
                 &:hover {
-                    color: #3d975f;
+                    color: #3d975f !important;
                 }
             }
             &::before {
@@ -1400,7 +1400,7 @@ button:focus, .navbar-toggler:focus, .navbar-toggler:hover{
             font-weight: 400;
             transition: all .3s;
             &:hover {
-                color: #3d975f;
+                color: #3d975f !important;
             }
         }
     }
@@ -1478,7 +1478,12 @@ button:focus, .navbar-toggler:focus, .navbar-toggler:hover{
     }
 }
 
-
+.modal-content{
+    padding: 5px;
+    .sn-img img{
+        width: 100% !important;
+    }
+}
 .single-content{
     // min-height: 30vh;
     height: fit-content !important;
@@ -1506,4 +1511,9 @@ button:focus, .navbar-toggler:focus, .navbar-toggler:hover{
     &.author{
         font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
+}
+
+.error{
+    min-height: 40vh;
+    text-align: center;
 }

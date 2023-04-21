@@ -17,3 +17,20 @@ DEPE.capitalize = (word) => {
 }
 
 DEPE.randomNum = (min, max) => Math.floor(Math.random() * (max - min + 1) ) + min;
+
+DEPE.objKeyValue = (obj, key, value) => {
+    return {...obj, [key]:value}
+}
+
+DEPE.getAttribs = (item, attrib) => {
+    return item.target.attributes[attrib].value
+}
+
+DEPE.scrollToTop = () =>{
+    window.scrollTo({
+    top: 0, 
+    behavior: 'auto'
+    /* you can also use 'auto' behaviour
+        in place of 'smooth' */
+    });
+};

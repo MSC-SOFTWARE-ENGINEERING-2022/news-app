@@ -1,27 +1,33 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { searchNews } from "../../api";
 
 import { Loader } from "../../components";
+import LocalStorageCtx from "../../contexts/LocalStorage";
 
-const Content = () => {
-    const [item, setItem] = useState(null);
+const Content = ({newsitem}) => {
+    const item = newsitem;
+    // const [item, setItem] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
 
-    const url = new URL(window.location.href);
-    const params = new URLSearchParams(url.search);
-    const key = params.getAll('key')[0];
+    // const url = new URL(window.location.href);
+    // const params = new URLSearchParams(url.search);
+    // const key = params.getAll('key')[0];
+
+    const {localContent} = useContext(LocalStorageCtx);
+    // console.log("localContent", localContent);
 
     useEffect(() => {
-        setItem(null);
+        // setItem(null);
         setIsLoading(true);
         setTimeout(() => {
-            searchNews(key)
-                .then((data) => {
-                    // console.log("item", data[0])
-                    setItem(data[0])
-                } )
-                .catch((error) => console.log(error))
-                .finally(() => setIsLoading(false));
+            setIsLoading(false);
+            // searchNews(localContent.news_id)
+            //     .then((data) => {
+            //         // console.log("item", data[0])
+            //         setItem(data[0])
+            //     } )
+            //     .catch((error) => console.log(error))
+            //     .finally(() => setIsLoading(false));
         }, 2000)
     }, [])
 

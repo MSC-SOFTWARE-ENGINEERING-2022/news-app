@@ -16,9 +16,6 @@ const Single = () => {
                             <Related />
                         </div>
                     </div>
-                    <div className="col-lg-4">
-                        <Sidebar />
-                    </div>
                 </div>
             </div>
         </div>

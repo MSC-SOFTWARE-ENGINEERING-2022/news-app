@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import configs from '../../configs/configs';
 import { DEPE } from '../../configs/utils';
+import LocalStorageCtx from '../../contexts/LocalStorage';
 
 
 
@@ -8,6 +9,21 @@ const FooterStart = () => {
     const {email, phone, address} = configs.contacts;
     const {home, news, news_by_topic} = configs.links;
     const {fb, tw, ld, ig, yt} = configs.social_media;
+
+    const {localContent, setLocalContent} = useContext(LocalStorageCtx);
+    // console.log("localContent", localContent);
+
+    const changeEntity = (item) => {
+        // console.log(item)
+        setLocalContent((obj) => ({...localContent, entity: DEPE.getAttribs(item, 'entity')}));
+        DEPE.scrollToTop()
+    }
+
+    const changeTopic = (item) => {
+        setLocalContent((obj) => ({...localContent, entity:"news", topic: DEPE.getAttribs(item, 'topic')}));
+        // console.log("localContent-nav", localContent);
+        DEPE.scrollToTop()
+    }
 
     return <div className="footer">
         <div className="container">
@@ -34,8 +50,8 @@ const FooterStart = () => {
                     <div className="footer-widget">
                         <h3 className="title">Useful Links</h3>
                         <ul>
-                            <li><a href="/">Home</a></li>
-                            <li><a href="/news">News</a></li>
+                            <li><a role='button' entity="home" onClick={changeEntity}>Home</a></li>
+                            <li><a role='button' entity="news" onClick={changeEntity}>News</a></li>
                         </ul>
                     </div>
                 </div>
@@ -45,7 +61,7 @@ const FooterStart = () => {
                         <h3 className="title">Quick Links</h3>
                         <ul>
                             {DEPE.getAllTopics().map((tp, idx) => {
-                                return <li key={idx}><a href={`${news_by_topic}/${tp.toLowerCase()}`}>{DEPE.capitalize(tp)}</a></li>
+                                return <li key={idx}><a role='button' topic={tp} onClick={changeTopic}>{DEPE.capitalize(tp)}</a></li>
                             })}
                         </ul>
                     </div>

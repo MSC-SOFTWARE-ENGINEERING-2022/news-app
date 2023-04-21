@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext} from "react";
 import { v4 as uuid } from 'uuid';
 import { fetchNews } from "../../api";
-import { Loader } from "../../components";
+import { Loader, SingleModal } from "../../components";
 import configs from "../../configs/configs";
 import { DEPE } from "../../configs/utils"
 import LocalStorageCtx from "../../contexts/LocalStorage";
@@ -12,26 +12,23 @@ const Sidebar = ({recentRead, topic='politics', selectItem}) => {
     const [dataC, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [localItems, setLocaItems] = useState([]);
-    const contextValue = useContext(LocalStorageCtx);
+    
+
+    const {localContent, setLocalContent} = useContext(LocalStorageCtx);
+    // console.log("localContent", localContent);
+
+
+    const changeTopic = (item) => {
+        setLocalContent((obj) => ({...localContent, entity:"news", topic: DEPE.getAttribs(item, 'topic')}));
+        DEPE.scrollToTop()
+        // console.log("localContent-nav", localContent);
+    }
 
 
     const retrieve = (item) => {
         const {headline, news_desk, pub_date, multimedia, _id, byline } = item;
         const img_src = multimedia.length && multimedia.find(mu => mu.subType === "blog225").url
-        return <> 
-          <div className="nl-img">
-            <img src={img_src && `http://www.nytimes.com/${img_src}`} alt={headline.main} />
-            </div>
-            <div className="nl-title">
-                <a href={`/news/id?key=${_id}`} onClick={() => selectItem(item)}>
-                    {headline.main}
-                    <br />
-                    <span className="addedInfo author">{byline.original}</span>
-                    <br />
-                    <span className="addedInfo date">{pub_date.split("T")[0]}</span>
-                </a>
-            </div>                            
-        </>
+        return <SingleModal elem={item} place="sidebar"/>
     }
     const sd = (datos, idx) => {
         // console.log(datos)
@@ -65,8 +62,8 @@ const Sidebar = ({recentRead, topic='politics', selectItem}) => {
     const {news_by_topic} = configs.links;
     const elems = DEPE.getAllTopics().reduce((acc, curr) => {
         const {cats, tags} = acc;
-            cats.push(<><a href={`${news_by_topic}/${curr.toLowerCase()}`}>{DEPE.capitalize(curr)}</a><span>({DEPE.randomNum(0, 231)})</span></>)
-            tags.push({name:curr.toUpperCase(), link:`${news_by_topic}/${curr.toLowerCase()}`})
+            cats.push(<><a role='button' topic={curr.toLowerCase()} onClick={changeTopic}>{DEPE.capitalize(curr)}</a><span>({DEPE.randomNum(0, 231)})</span></>)
+            tags.push({name:curr.toUpperCase(), id:curr.toLowerCase()})
         return acc;
     }, {cats:[], tags:[]})
 
@@ -109,7 +106,7 @@ const Sidebar = ({recentRead, topic='politics', selectItem}) => {
         setTimeout(() => {
             fetchNews(topic)
             .then((data) => {
-                console.log("trialdata", data)
+                // console.log("trialdata", data)
                 setData(data)
             })
             .catch((error) => console.log(error))
@@ -349,7 +346,7 @@ const Sidebar = ({recentRead, topic='politics', selectItem}) => {
         <div className="sidebar-widget">
             <h2 className="sw-title">Tags</h2>
             <div className="tags">
-            {elems.tags.map((el, idx) => <a key={idx} href={el.link}>{el.name}</a>)}
+            {elems.tags.map((el, idx) => <a key={idx} role='button' topic={el.id} onClick={changeTopic}>{el.name}</a>)}
             </div>
         </div>
     </div>

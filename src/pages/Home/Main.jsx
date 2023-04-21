@@ -1,7 +1,8 @@
 import {useState, useEffect} from 'react';
 import Slider from "react-slick";
 import { fetchNews } from '../../api';
-import { Loader } from '../../components';
+import { Loader, SingleModal } from '../../components';
+import Single from '../Single/Single';
 
 const Main = () => {
     const [data, setData] = useState([]);
@@ -9,18 +10,7 @@ const Main = () => {
 
     const retrieve = (item) => {
         const {headline, news_desk, pub_date, multimedia, byline, _id} = item;
-        return <> 
-            <img src={`http://www.nytimes.com/${multimedia.find(mu => mu.subType === "blog533").url}`} alt={headline.main} />
-            <div className="tn-title">
-                <a href={`/news/id?key=${_id}`}>
-                    {headline.main}
-                    <br />
-                    <span className="addedInfo author">{byline.original}</span>
-                    <br />
-                    <span className="addedInfo date">{pub_date.split("T")[0]}</span>
-                </a>
-            </div>                            
-        </>
+        return <SingleModal elem={item} place="top" />
     }
     const sd = (idx) => {
         return <div className="col-md-6">

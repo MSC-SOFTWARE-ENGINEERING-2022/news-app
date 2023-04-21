@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 import Slider from "react-slick";
 import { fetchNews } from '../../api';
-import { Loader } from '../../components';
+import { Loader, SingleModal } from '../../components';
 
 const Category = () => {
     const [data, setData] = useState([]);
@@ -54,21 +54,7 @@ const Category = () => {
 
     const retrieve = (item) => {
         const {headline, news_desk, pub_date, multimedia, byline, _id} = item;
-        return <> 
-            <div className="cn-img">
-                <img src={`http://www.nytimes.com/${multimedia.find(mu => mu.subType === "blog533").url}`} alt={headline.main} />            
-            
-            <div className="cn-title">
-                <a href={`/news/id?key=${_id}`}>
-                    {headline.main}
-                    <br />
-                    <span className="addedInfo author">{byline.original}</span>
-                    <br />
-                    <span className="addedInfo date">{pub_date.split("T")[0]}</span>
-                </a>
-            </div>
-            </div>                           
-        </>
+        return <SingleModal elem={item} place="category" />
     }
     const sd = (idx, datos) => {
         return <div className="col-md-6">
@@ -87,7 +73,7 @@ const Category = () => {
         setTimeout(() => {
             fetchNews('politics')
             .then((data) => {
-                console.log(data)
+                // console.log(data)
                 setData(data)
             })
             .catch((error) => console.log(error))
@@ -101,7 +87,7 @@ const Category = () => {
         setTimeout(() => {
             fetchNews('travel')
             .then((data) => {
-                console.log(data)
+                // console.log(data)
                 setDataTravel(data)
             })
             .catch((error) => console.log(error))
@@ -115,7 +101,7 @@ const Category = () => {
         setTimeout(() => {
             fetchNews('sports')
             .then((data) => {
-                console.log(data)
+                // console.log(data)
                 setDataSports(data)
             })
             .catch((error) => console.log(error))
@@ -129,7 +115,7 @@ const Category = () => {
         setTimeout(() => {
             fetchNews('culture')
             .then((data) => {
-                console.log(data)
+                // console.log(data)
                 setDataCulture(data)
             })
             .catch((error) => console.log(error))
@@ -143,7 +129,7 @@ const Category = () => {
         setTimeout(() => {
             fetchNews('business')
             .then((data) => {
-                console.log(data)
+                // console.log(data)
                 setDataBusiness(data)
             })
             .catch((error) => console.log(error))
