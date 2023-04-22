@@ -4,7 +4,7 @@ This project is hosted in Netlify [https://jkuatmsc-group1-newsapp.netlify.app](
 
 ## Context
 
-The task was an assignment for JKUAT Masters HCI unit.
+The task was an assignment for JKUAT Masters HCI (Human Computer Interaction) unit.\
 It is about developing a user-interface for a news-app.
 
 ## Code
@@ -17,11 +17,14 @@ The API token is also for development purposes and will be deleted after assignm
 
 ## Local Deployment
 
+Please remember to install all dependencies in the package.json file first before running the application.\
+From the project folder, open the command-line execute the command:
+
+### `npm i`
+
 In the project directory, you can run:
 
 ### `npm start`
-
-Please remember to install all dependencies in the package.json file first before running the application
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
