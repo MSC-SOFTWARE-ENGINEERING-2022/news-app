@@ -24,6 +24,9 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+
+    <link href="%PUBLIC_URL%/css/initialload.css" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald&family=Russo+One&family=Monoton&display=swap" rel="stylesheet">
@@ -42,9 +45,105 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
         
     <title>NewsApp</title>
+
+    <style>
+      .parent-root-spinner{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        background-color: #fbfffb;
+      }
+      
+    .root-spinner {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+      }
+      
+      .root-spinner span {
+        width: 35px;
+        height: 30px;
+        background: #cacacaba;
+        animation: dominos 1s ease infinite;
+        box-shadow: 2px 2px 3px 0px #20281e;
+      }
+      
+      .root-spinner span:nth-child(1) {
+        --left: 80px;
+        animation-delay: 0.125s;
+      }
+      
+      .root-spinner span:nth-child(2) {
+        --left: 70px;
+        animation-delay: 0.3s;
+      }
+      
+      .root-spinner span:nth-child(3) {
+        left: 60px;
+        animation-delay: 0.425s;
+      }
+      
+      .root-spinner span:nth-child(4) {
+        animation-delay: 0.54s;
+        left: 50px;
+      }
+      
+      .root-spinner span:nth-child(5) {
+        animation-delay: 0.665s;
+        left: 40px;
+      }
+      
+      .root-spinner span:nth-child(6) {
+        animation-delay: 0.79s;
+        left: 30px;
+      }
+      
+      .root-spinner span:nth-child(7) {
+        animation-delay: 0.915s;
+        left: 20px;
+      }
+      
+      .root-spinner span:nth-child(8) {
+        left: 10px;
+      }
+
+      @keyframes dominos {
+    50% {
+      opacity: 0.7;
+    }
+  
+    75% {
+      -webkit-transform: rotate(90deg);
+      transform: rotate(90deg);
+    }
+  
+    80% {
+      opacity: 1;
+    }
+  }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div id="root">
+      <div class="parent-root-spinner">
+        <div class="root-spinner">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
