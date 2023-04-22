@@ -22,7 +22,7 @@ From the project folder, open the command-line execute the command:
 
 ### `npm i`
 
-In the project directory, you can run:
+Then run:
 
 ### `npm start`
 
