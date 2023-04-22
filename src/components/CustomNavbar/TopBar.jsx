@@ -1,5 +1,5 @@
-import configs from "../../configs/configs";
-import CustomModal from "../CustomModal/CustomModal";
+import configs from "../../configs/configs.js";
+import CustomModal from "../CustomModal/CustomModal.jsx";
 
 const TopBar = () => {
     return <div className="top-bar">

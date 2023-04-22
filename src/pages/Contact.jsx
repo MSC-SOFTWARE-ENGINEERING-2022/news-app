@@ -17,7 +17,8 @@ const Contact = () => {
                     <input type="text" name="txtPhone" className="form-control" placeholder="Your Phone Number *" value="" disabled/>
                 </div>
                 <div className="form-group">
-                    <input type="submit" name="btnSubmit" className="btnContact" value="Send Message" disabled/>
+                    <input type="submit" name="btnSubmit" className="btnContact btnSubmit btn btn-success" value="Send Message" disabled/>
+                    <input type="reset" name="btnReset" className="btnContact btnReset btn btn-secondary" value="Reset" disabled/>
                 </div>
             </div>
             <div className="col-md-6">

@@ -8,7 +8,6 @@ const Home = () => {
     <Main />
     <Category />
     <Tab />
-    <ScrollBackToTop />
   </>
 }
 

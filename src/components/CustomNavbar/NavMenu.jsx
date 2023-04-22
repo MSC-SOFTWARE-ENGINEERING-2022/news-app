@@ -18,16 +18,14 @@ const NavMenu = () => {
         setLocalContent((obj) => ({...localContent, entity: DEPE.getAttribs(item, 'entity')}));
     }
 
+    const checkActive = (content, item, itemClass) => (content.entity === item)? `${itemClass} active`: itemClass;
+
     const changeTopic = (item) => {
         setLocalContent((obj) => ({...localContent, entity:"news", topic: DEPE.getAttribs(item, 'topic')}));
         // console.log("localContent-nav", localContent);
     }
 
-    // const changeCurrent = (item) => {
-    //     setLocalContent((obj) => ({...localContent, topic:}));
-    // }
-
-    const toggle = () => setIsOpen(!isOpen);
+    const toggle = () => setIsOpen(state => !isOpen);
 
     const topicElems = <>{
         DEPE.getAllTopics().map((tp, idx) => {
@@ -42,20 +40,19 @@ const NavMenu = () => {
         <div className="container">
             <nav className="navbar navbar-expand-md bg-dark navbar-dark">
                 <a role='button' className="navbar-brand" entity="home">{brand}</a>
-                <button type="button" className="navbar-toggler" onClick={toggle} data-toggle="collapse" data-target="#navbarCollapse">
+                <button type="button" className="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                <div className={`collapse navbar-collapse justify-content-between ${isOpen && 'show'}`} id="navbarCollapse">
+                <div className="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div className="navbar-nav mr-auto">
-                        <a role='button' className="nav-item nav-link active" entity="home" onClick={changeEntity}>Home</a>
+                        <a role='button' className={checkActive(localContent, "home", 'nav-item nav-link ')} entity="home" onClick={changeEntity}>Home</a>
                         <div className="nav-item dropdown">
-                            <a role='button' className="nav-link dropdown-toggle" data-toggle="dropdown" entity="news">News</a>
+                            <a role='button' className={checkActive(localContent, "news", 'nav-link dropdown-toggle ')} data-toggle="dropdown" entity="news">News</a>
                             <div className="dropdown-menu">
-                                {/* <a href={news} className="dropdown-item">All</a> */}
                                 {topicElems}
                             </div>
                         </div>
-                        <a role='button' className="nav-item nav-link" entity="contacts" onClick={changeEntity}>Contact Us</a>
+                        <a role='button' className={checkActive(localContent, "contacts", 'nav-item nav-link ')} entity="contacts" onClick={changeEntity}>Contact Us</a>
                     </div>
                     <div className="social ml-auto">
                         <a href={tw} target="_blank"><i className="fab fa-twitter"></i></a>
