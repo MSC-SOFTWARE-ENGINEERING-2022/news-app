@@ -13,7 +13,7 @@ This is a React based app and data is from [NewYorkTimes API](https://developer.
 Due to restriction in API requests per minute and per day, the decision to download some json files was viable.\
 Hence the current data is static but you can enable the live-data in /src/api files.
 
-The API token is also for development purposes and will be deleted after assignment has been delivered and marked.
+The API token is also for development purposes and will be deleted after assignment has been delivered and assessment completed.
 
 ## Local Deployment
 
@@ -26,7 +26,7 @@ Then run:
 
 ### `npm start`
 
-Runs the app in the development mode.\
+This runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\

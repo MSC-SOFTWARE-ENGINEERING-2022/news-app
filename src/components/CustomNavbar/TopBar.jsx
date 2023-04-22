@@ -1,4 +1,5 @@
 import configs from "../../configs/configs.js";
+import { About } from "../../pages/Modals/index.js";
 import CustomModal from "../CustomModal/CustomModal.jsx";
 
 const TopBar = () => {
@@ -13,7 +14,7 @@ const TopBar = () => {
                 </div>
                 <div className="col-md-6">
                     <div className="tb-menu">
-                        <CustomModal head="About"/>
+                        <CustomModal head="About" body={<About/>} />
                         <CustomModal head="Privacy"/>
                         <CustomModal head="Terms"/>
                     </div>
