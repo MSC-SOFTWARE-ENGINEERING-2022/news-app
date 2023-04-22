@@ -9,8 +9,8 @@ It is about developing a user-interface for a news-app.
 
 ## Code
 
-This is a React based app and data is from [NewYorkTimes API](https://developer.nytimes.com/apis)
-Due to restriction in API requests per minute and per day, the decision to download some json files was viable.
+This is a React based app and data is from [NewYorkTimes API](https://developer.nytimes.com/apis) \
+Due to restriction in API requests per minute and per day, the decision to download some json files was viable.\
 Hence the current data is static but you can enable the live-data in /src/api files.
 
 The API token is also for development purposes and will be deleted after assignment has been delivered and marked.
