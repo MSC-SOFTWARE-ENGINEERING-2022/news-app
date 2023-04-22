@@ -5,6 +5,7 @@ import Content from '../../pages/Single/Content.jsx';
 
 const SingleModal = (args) => {
     const {elem, place} = args;
+    const [currentElem, setCurrentElem] = useState(elem);
 
     const {localContent, setLocalContent} = useContext(LocalStorageCtx);
     
@@ -16,14 +17,16 @@ const SingleModal = (args) => {
 
     const [modal, setModal] = useState(false);
 
-    const toggle = () => {
+    const toggle = (event) => {
       setModal(!modal)
       if(!modal){
+        // console.log("elem", elem);
+        setCurrentElem(elem);
         setLocalContent((curr) => {
           const elemObj = {timestamp:Date.now(), newsitem: elem};
           const updateOpened = [
             elemObj,
-            ...curr.openedItems,
+            ...curr.openedItems.filter(co=> co.newsitem._id !== _id),
           ]
 
           if(!localStorage.openedNewsItems){
@@ -31,7 +34,9 @@ const SingleModal = (args) => {
           }else{
             const present = JSON.parse(localStorage.openedNewsItems);
             const filtered = present.filter(pr => pr.newsitem._id !== _id);
+            // console.log("filtered", filtered);
             const merged = [elemObj, ...filtered]
+            // console.log("merged", merged);
             localStorage.setItem('openedNewsItems', JSON.stringify(merged));
           }
           return {...curr, openedItems:updateOpened};
@@ -124,7 +129,7 @@ top: <>
 
         
         <Modal isOpen={modal} toggle={toggle} {...args}>
-          <Content newsitem={elem} />
+          <Content newsitem={currentElem} />
           <Button color="secondary" onClick={toggle}>
                   Close
           </Button>      

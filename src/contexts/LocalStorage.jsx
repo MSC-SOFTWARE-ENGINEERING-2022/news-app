@@ -1,7 +1,8 @@
 import React from 'react';
 
 const LocalStorageCtx = React.createContext({
-    localstore: []
+    localstore: [],
+    openedItems: localStorage?.openedNewsItems || []
 });
 
 export default LocalStorageCtx;

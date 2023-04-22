@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext} from "react";
 import { v4 as uuid } from 'uuid';
-import { Loader, SingleModal } from "../../components";
+import { Loader, RecentRead, SingleModal } from "../../components";
 import configs from "../../configs/configs";
 import { DEPE } from "../../configs/utils"
 import LocalStorageCtx from "../../contexts/LocalStorage";
@@ -34,13 +34,6 @@ const Sidebar = ({topic='politics'}) => {
         }</div>
     }
     
-    const itemObj = (itm) => ({
-        key: itm._id,
-        id: uuid(),
-        timestamp: Date.now(),
-        item: itm
-    })
-
     const {news_by_topic} = configs.links;
     const elems = DEPE.getAllTopics().reduce((acc, curr) => {
         const {cats, tags} = acc;
@@ -48,13 +41,6 @@ const Sidebar = ({topic='politics'}) => {
             tags.push({name:curr.toUpperCase(), id:curr.toLowerCase()})
         return acc;
     }, {cats:[], tags:[]})
-
-    // console.log("recent", recentRead);
-
-    const clearRecent = () => {
-        localStorage.removeItem('openedNewsItems');
-        setLocalContent(lc => ({...lc, openedItems: []}))
-    }
 
     useEffect(() => {
         setIsLoading(true);
@@ -65,17 +51,8 @@ const Sidebar = ({topic='politics'}) => {
         <div className="sidebar-widget">
             <h2 className="sw-title">Recently Viewed</h2>
             <div className="news-list">
-                {isLoading && <Loader />}
-                {!isLoading && <>
-                    {data.map((dt, idx) => {
-                        return <div key={idx} className="nl-item">
-                            {retrieve(dt)}
-                        </div>
-                    })}
-                </> || 'Checking for recent items'}
-                {!isLoading && data.length < 1 && "No recent items"}
+                <RecentRead place="sidebar" itemClass="nl-item" />
             </div>
-            <button className="clearRecent btn btn-outline-secondary btn-sm btn-block" onClick={clearRecent}>Clear</button>
         </div>
 
         <div className="sidebar-widget">

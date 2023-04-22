@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 import { fetchNews } from '../../api';
-import { Loader, SingleModal } from '../../components';
+import { Loader, RecentRead, SingleModal } from '../../components';
 
 const Tab = () => {
     const [data, setData] = useState([]);
@@ -30,8 +30,7 @@ const Tab = () => {
             })
             .catch((error) => console.log(error))
             .finally(() => setIsLoading(false));
-        }, 2000)
-        
+        }, 2000)    
     }, [])
 
     return <div className="tab-news">
@@ -72,18 +71,18 @@ const Tab = () => {
           <div className="col-md-6">
               <ul className="nav nav-pills nav-justified">
                   <li className="nav-item">
-                      <a className="nav-link active" data-toggle="pill" href="#m-viewed">Most Viewed</a>
+                      <a className="nav-link" data-toggle="pill" href="#m-viewed">Most Viewed</a>
                   </li>
                   <li className="nav-item">
                       <a className="nav-link" data-toggle="pill" href="#m-read">Most Recent</a>
                   </li>
                   <li className="nav-item">
-                      <a className="nav-link" data-toggle="pill" href="#m-recent">Recently viewed</a>
+                      <a className="nav-link active" data-toggle="pill" href="#m-recent">Recently viewed</a>
                   </li>
               </ul>
 
               <div className="tab-content">
-                  <div id="m-viewed" className="container tab-pane active">
+                  <div id="m-viewed" className="container tab-pane fade">
                     {sd(6)}
                     {sd(9)}
                     {sd(5)}
@@ -93,10 +92,8 @@ const Tab = () => {
                     {sd(9)}
                     {sd(5)}
                   </div>
-                  <div id="m-recent" className="container tab-pane fade">
-                    {sd(6)}
-                    {sd(9)}
-                    {sd(5)}
+                  <div id="m-recent" className="container tab-pane active">
+                    <RecentRead place="tab" itemClass="tn-news" />
                   </div>
               </div>
           </div>

@@ -6,7 +6,7 @@ import configs from './configs/configs';
 import './css/style/style.css';
 
 const App = () => {
-  const {home, homeB, homeC, news, error} = configs.links
+  const {home, homeB, homeC, news, error} = configs.links;
   return (
     <Router>
       <Routes>
