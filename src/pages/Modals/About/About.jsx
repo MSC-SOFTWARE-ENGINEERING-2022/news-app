@@ -6,6 +6,7 @@ const About = () => {
         
         <h3 id="news-app-using-react">News App using React</h3>
         <p>This project is hosted in Netlify <a href="https://jkuatmsc-group1-newsapp.netlify.app" target="_blank">https://jkuatmsc-group1-newsapp.netlify.app</a>.</p>
+        <p>This Github project repository is: <a href="https://github.com/MSC-SOFTWARE-ENGINEERING-2022/news-app" target="_blank">repo-link</a>.</p>        
         <h4 id="context">Context</h4>
         <p>The task was an assignment for JKUAT Masters HCI (Human Computer Interaction) unit.<br />
         It is about developing a user-interface for a news-app.</p>
