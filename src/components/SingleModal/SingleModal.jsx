@@ -20,7 +20,7 @@ const SingleModal = (args) => {
     const toggle = (event) => {
       setModal(!modal)
       if(!modal){
-        console.log("elem", elem);
+        // console.log("elem", elem);
         setCurrentElem(elem);
         setLocalContent((curr) => {
           const elemObj = {timestamp:Date.now(), newsitem: elem};

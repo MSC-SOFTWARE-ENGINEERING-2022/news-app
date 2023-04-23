@@ -127,7 +127,7 @@ button.btn {
         background: #3d975f;
         border-color: #3d975f;
     }
-    &.clearRecent{
+    &.clearRecent, &.btnClose{
         color: #ffffff;
         background: #727272;
         border: none;
@@ -142,7 +142,12 @@ button.btn {
     &.btnClose{
         padding: 5px !important;
         margin: 8px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, .4);
+    }
+    &.clearRecent{
+        &:disabled{
+            opacity: 0.5;
+            box-shadow: none;
+        }
     }
 }
 

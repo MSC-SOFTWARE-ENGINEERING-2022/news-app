@@ -128,7 +128,7 @@ button.btn:hover {
   background: #3d975f;
   border-color: #3d975f;
 }
-button.btn.clearRecent {
+button.btn.clearRecent, button.btn.btnClose {
   color: #ffffff;
   background: #727272;
   border: none;
@@ -136,14 +136,17 @@ button.btn.clearRecent {
   font-size: 13px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 }
-button.btn.clearRecent:hover {
+button.btn.clearRecent:hover, button.btn.btnClose:hover {
   color: #ffffff;
   background: #535353;
 }
 button.btn.btnClose {
   padding: 5px !important;
   margin: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+button.btn.clearRecent:disabled {
+  opacity: 0.5;
+  box-shadow: none;
 }
 
 .col-lg-8:has(.topicName) {
