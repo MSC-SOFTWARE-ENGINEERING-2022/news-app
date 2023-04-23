@@ -145,9 +145,9 @@ const Category = () => {
                             {sd(3, dataSports)}
                         </Slider>
                     </div>
-                    <div className="col-md-6" autoplaySpeed={8000}>
+                    <div className="col-md-6" >
                         <h2>Politics</h2>
-                        <Slider {...settings}>
+                        <Slider {...settings} autoplaySpeed={8000}>
                             {sd(3, data)}
                             {sd(4, data)}
                             {sd(5, data)}
