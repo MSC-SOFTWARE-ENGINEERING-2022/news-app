@@ -11,7 +11,7 @@ const CustomModal = (args) => {
     return (
       <>
         <a role="button" onClick={toggle}>{head}</a>
-        <Modal isOpen={modal} toggle={toggle} {...args}>
+        <Modal isOpen={modal} toggle={toggle} {...args} size="lg">
           {fullElem || 
             <>
               <ModalHeader toggle={toggle}>{head}</ModalHeader>

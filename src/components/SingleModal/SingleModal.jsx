@@ -99,7 +99,7 @@ const SingleModal = (args) => {
     return (
       <>
         {places[place]}         
-        <Modal className="singleModal" isOpen={modal} toggle={toggle} {...args}>
+        <Modal className="singleModal" isOpen={modal} toggle={toggle} {...args} size="lg">
           <ModalHeader toggle={toggle}>{currentElem.headline.main}</ModalHeader>
           <ModalBody>
             <Content newsitem={currentElem} />
