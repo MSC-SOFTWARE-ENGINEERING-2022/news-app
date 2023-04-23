@@ -949,30 +949,49 @@ button.btn {
 .singleModal{
     .modal-content{
         .md-content{
+            margin-top: -10px;
+            div.meta{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                margin-bottom: 5px;
+            }
             img {
                 width: 100%;
+                max-height: 50vh;
+                object-fit: cover;
                 border-radius: 2px;
                 box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
             }
-        }
-        .sub-content{
-            margin-top: 5px;
+            .sub-content{
+                margin-top: 5px;
+                a.externalSrc{
+                    font-size: 0.8em;
+                }
+            }
             p {
                 padding: 2px;
                 margin-bottom: 2px;
                 font-size: 0.95em;
+                &.pLead, &.pAbstract{
+                    text-align: justify;
+                }
+                &.section{
+                    font-size: 0.8em;
+                    text-decoration: underline #666666;
+                    width: fit-content;
+                }
                 &.author, &.date{
                     font-size: 0.8em;
                     padding: 0;
                     margin: 0;
+                    min-width: 100px;
+                    .fas{
+                       color: #535353;
+                    }
                 }
-                &.section{
-                    font-size: 0.8em;
-                    background-color: #e2e2e2;
-                    width: fit-content;
-                    border-radius: 5px;
-                    padding: 5px;
-                    box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
+                &.date{
+                    text-align: right;
                 }
             }
         }

@@ -880,32 +880,55 @@ button.btn.clearRecent:disabled {
 /**********************************/
 /*********** Modal CSS **********/
 /**********************************/
+.singleModal .modal-content .md-content {
+  margin-top: -10px;
+}
+.singleModal .modal-content .md-content div.meta {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
 .singleModal .modal-content .md-content img {
   width: 100%;
+  max-height: 50vh;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 2px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
-.singleModal .modal-content .sub-content {
+.singleModal .modal-content .md-content .sub-content {
   margin-top: 5px;
 }
-.singleModal .modal-content .sub-content p {
+.singleModal .modal-content .md-content .sub-content a.externalSrc {
+  font-size: 0.8em;
+}
+.singleModal .modal-content .md-content p {
   padding: 2px;
   margin-bottom: 2px;
   font-size: 0.95em;
 }
-.singleModal .modal-content .sub-content p.author, .singleModal .modal-content .sub-content p.date {
+.singleModal .modal-content .md-content p.pLead, .singleModal .modal-content .md-content p.pAbstract {
+  text-align: justify;
+}
+.singleModal .modal-content .md-content p.section {
+  font-size: 0.8em;
+  -webkit-text-decoration: underline #666666;
+          text-decoration: underline #666666;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.singleModal .modal-content .md-content p.author, .singleModal .modal-content .md-content p.date {
   font-size: 0.8em;
   padding: 0;
   margin: 0;
+  min-width: 100px;
 }
-.singleModal .modal-content .sub-content p.section {
-  font-size: 0.8em;
-  background-color: #e2e2e2;
-  width: -moz-fit-content;
-  width: fit-content;
-  border-radius: 5px;
-  padding: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+.singleModal .modal-content .md-content p.author .fas, .singleModal .modal-content .md-content p.date .fas {
+  color: #535353;
+}
+.singleModal .modal-content .md-content p.date {
+  text-align: right;
 }
 
 /**********************************/
