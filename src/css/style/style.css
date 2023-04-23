@@ -413,6 +413,8 @@ button.btn.clearRecent:disabled {
   padding: 30px 0 0 0;
   align-items: center;
   display: flex;
+  animation-name: fade-in;
+  animation-duration: 2s;
 }
 .top-news .tn-img {
   position: relative;
@@ -535,6 +537,8 @@ button.btn.clearRecent:disabled {
   position: relative;
   width: 100%;
   padding: 0;
+  animation-name: fade-in;
+  animation-duration: 3s;
 }
 .cat-news .col-md-6 {
   margin-bottom: 30px;
@@ -624,6 +628,8 @@ button.btn.clearRecent:disabled {
 /**********************************/
 .tab-news {
   position: relative;
+  animation-name: fade-in;
+  animation-duration: 4s;
 }
 .tab-news .col-md-6 {
   margin-bottom: 60px;
@@ -776,6 +782,8 @@ button.btn.clearRecent:disabled {
   width: 100%;
   padding: 25px 0 0 0;
   margin-bottom: 15px;
+  animation-name: fade-in;
+  animation-duration: 2s;
 }
 .single-news .sn-img {
   position: relative;
@@ -1374,6 +1382,8 @@ button:focus, .navbar-toggler:focus, .navbar-toggler:hover {
   margin-top: 10%;
   margin-bottom: 6%;
   width: 70%;
+  animation-name: fade-in;
+  animation-duration: 2s;
 }
 .contact-form .form-control {
   border-radius: 1rem;
@@ -1419,6 +1429,14 @@ button:focus, .navbar-toggler:focus, .navbar-toggler:hover {
   cursor: pointer;
 }
 
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .modal-content {
   padding: 5px;
 }
