@@ -5,8 +5,6 @@ import { DEPE } from '../../configs/utils';
 import Sidebar from "../Sidebar/Sidebar";
 import Multiple from "./Multiple";
 
-
-
 const Topic = ({topic}) => {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);

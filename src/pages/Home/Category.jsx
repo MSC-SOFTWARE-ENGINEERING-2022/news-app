@@ -16,10 +16,11 @@ const Category = () => {
 
     const settings = {
         className:"row cn-slider",
-        infinite: false,        
-        autoplay: false,
+        infinite: true,        
+        autoplay: true,
         dots: false,
-        speed: 500,
+        speed: 1000,
+        autoplaySpeed: 10000,
         slidesToShow: 2,
         slidesToScroll: 1,
         // adaptiveHeight: true,
@@ -55,13 +56,11 @@ const Category = () => {
     const retrieve = (item) => <SingleModal elem={item} place="category" />
     const sd = (idx, datos) => {
         return <div className="col-md-6">
-            {
-                isLoading ? <Loader />: <>
-                    {
-                        datos[idx]? retrieve(datos[idx]): 'No data'
-                    }
-                </>
-            }
+            {isLoading ? <Loader />: <>
+                {
+                    datos[idx]? retrieve(datos[idx]): 'No data'
+                }
+            </>}
         </div>
     }
     useEffect(() => {
@@ -140,13 +139,13 @@ const Category = () => {
                 <div className="row">
                     <div className="col-md-6">
                         <h2>Sports</h2>
-                        <Slider {...settings}>
+                        <Slider {...settings} autoplaySpeed={5000}>
                             {sd(1, dataSports)}
                             {sd(2, dataSports)}
                             {sd(3, dataSports)}
                         </Slider>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6" autoplaySpeed={8000}>
                         <h2>Politics</h2>
                         <Slider {...settings}>
                             {sd(3, data)}
@@ -163,7 +162,7 @@ const Category = () => {
                 <div className="row">
                     <div className="col-md-6">
                         <h2>Business</h2>
-                        <Slider {...settings}>
+                        <Slider {...settings} autoplaySpeed={11000}>
                             {sd(6, dataBusiness)}
                             {sd(7, dataBusiness)}
                             {sd(5, dataBusiness)}
@@ -171,7 +170,7 @@ const Category = () => {
                     </div>
                     <div className="col-md-6">
                         <h2>Culture</h2>
-                        <Slider {...settings}>
+                        <Slider {...settings} autoplaySpeed={14000}>
                             {sd(2, dataCulture)}
                             {sd(7, dataCulture)}
                             {sd(8, dataCulture)}

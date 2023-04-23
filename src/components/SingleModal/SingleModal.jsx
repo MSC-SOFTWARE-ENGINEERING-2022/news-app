@@ -20,7 +20,7 @@ const SingleModal = (args) => {
     const toggle = (event) => {
       setModal(!modal)
       if(!modal){
-        // console.log("elem", elem);
+        console.log("elem", elem);
         setCurrentElem(elem);
         setLocalContent((curr) => {
           const elemObj = {timestamp:Date.now(), newsitem: elem};
@@ -45,94 +45,70 @@ const SingleModal = (args) => {
       }
     };
 
-    const places = {
-      sidebar: <><div className="nl-img">
-                  <img {...img_src} alt={headline.main} />
-                  </div>
-                  <div className="nl-title">
-                  <a role='button' onClick={toggle}>
-                          {headline.main}
-                          <br />
-                          <span className="addedInfo author">{byline.original}</span>
-                          <br />
-                          <span className="addedInfo date">{pub_date.split("T")[0]}</span>
-                      </a>
-                  </div> 
-                </>,
-      multiple: <>
-        <div className="tp-img">
+    const staticElem = (initials) => <>
+      <div className={`${initials}-img`}>
         <img {...img_src} alt={headline.main} />
-        </div>
-        <div className="tp-title">
-           
-          <a role='button' onClick={toggle}>
-          {headline.main}
-          <br />
-          <span className="addedInfo author">{byline.original}</span>
-          <br />
-          <span className="addedInfo date">{pub_date.split("T")[0]}</span>
-        </a>        
-        </div>
-      </>,
-
-      tab: <><div className="tn-img">
-      <img {...img_src} alt={headline.main} />
       </div>
-      <div className="tn-title">
-          {/* <a href={`/news/id?key=${_id}`}>{headline.main}</a> */}
-          <a role='button' onClick={toggle}>
+      <div className={`${initials}-title`}>
+        <a role='button' onClick={toggle}>
+            {headline.main}
+            <br />
+            <span className="addedInfo author">{byline.original}</span>
+            <br />
+            <span className="addedInfo date">{pub_date.split("T")[0]}</span>
+        </a>
+      </div> 
+    </>
+
+    const staticElem2 = (initials) => <>
+      <img {...img_src} alt={headline.main} />
+      <div className={`${initials}-title`}>
+        <a role='button' onClick={toggle}>
           {headline.main}
           <br />
           <span className="addedInfo author">{byline.original}</span>
           <br />
           <span className="addedInfo date">{pub_date.split("T")[0]}</span>
-        </a> 
-      </div>                        
-  </>,
+        </a>
+      </div> 
+    </>
 
-  
-category:  <>
-<div className="cn-img">
-                <img {...img_src} alt={headline.main} />            
-            
-            <div className="cn-title">
-            <a role='button' onClick={toggle}>
-                    {headline.main}
-                    <br />
-                    <span className="addedInfo author">{byline.original}</span>
-                    <br />
-                    <span className="addedInfo date">{pub_date.split("T")[0]}</span>
-                </a>
-            </div>
-            </div> 
+    const staticElem3 = (initials) => <>
+      <div className={`${initials}-img`}>
+        <img {...img_src} alt={headline.main} />
+        <div className={`${initials}-title`}>
+        <a role='button' onClick={toggle}>
+                {headline.main}
+                <br />
+                <span className="addedInfo author">{byline.original}</span>
+                <br />
+                <span className="addedInfo date">{pub_date.split("T")[0]}</span>
+            </a>
+        </div>
+      </div>   
+    </>
 
-
-</>,
-
-top: <> 
-<img {...img_src} alt={headline.main} />
-<div className="tn-title">
-<a role='button' onClick={toggle}>
-        {headline.main}
-        <br />
-        <span className="addedInfo author">{byline.original}</span>
-        <br />
-        <span className="addedInfo date">{pub_date.split("T")[0]}</span>
-    </a>
-</div>                            
-</>
+    const places = {
+      sidebar: staticElem("nl"),
+      multiple: staticElem("tp"),
+      tab: staticElem("tn"),
+      category: staticElem3("cn"),
+      top: staticElem3("tn")
     }
   
     return (
       <>
-      {places[place]} 
-
-        
-        <Modal isOpen={modal} toggle={toggle} {...args}>
-          <Content newsitem={currentElem} />
-          <Button color="secondary" onClick={toggle}>
-                  Close
-          </Button>      
+        {places[place]}         
+        <Modal className="singleModal" isOpen={modal} toggle={toggle} {...args}>
+          <ModalHeader toggle={toggle}>{currentElem.headline.main}</ModalHeader>
+          <ModalBody>
+            <Content newsitem={currentElem} />
+          </ModalBody>
+          <ModalFooter>
+            <Button color="secondary" onClick={toggle} className="btnClose">
+              Close
+            </Button>
+          </ModalFooter>     
         </Modal>          
       </>
     );

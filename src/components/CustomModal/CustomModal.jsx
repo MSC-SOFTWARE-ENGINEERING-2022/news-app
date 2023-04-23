@@ -22,8 +22,8 @@ const CustomModal = (args) => {
                 {/* <Button color="primary" onClick={toggle}>
                   Do Something
                 </Button>{' '} */}
-                <Button color="secondary" onClick={toggle}>
-                  Cancel
+                <Button color="secondary" onClick={toggle} className="btnClose">
+                  Close
                 </Button>
               </ModalFooter>
             </>

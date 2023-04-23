@@ -2,11 +2,11 @@ import React, { useContext } from 'react'
 import configs from '../../configs/configs';
 import { DEPE } from '../../configs/utils';
 import LocalStorageCtx from '../../contexts/LocalStorage';
+import SocialMedia from '../SocialMedia/SocialMedia';
 
 const FooterStart = () => {
     const {email, phone, address} = configs.contacts;
     const {home, news, news_by_topic} = configs.links;
-    const {fb, tw, ld, ig, yt} = configs.social_media;
 
     const {localContent, setLocalContent} = useContext(LocalStorageCtx);
     // console.log("localContent", localContent);
@@ -34,11 +34,7 @@ const FooterStart = () => {
                             <p><i className="fa fa-envelope"></i>{email}</p>
                             <p><i className="fa fa-phone"></i>{phone}</p>
                             <div className="social">
-                                <a href={tw} target="_blank"><i className="fab fa-twitter"></i></a>
-                                <a href={fb} target="_blank"><i className="fab fa-facebook-f"></i></a>
-                                <a href={ld} target="_blank"><i className="fab fa-linkedin-in"></i></a>
-                                <a href={ig} target="_blank"><i className="fab fa-instagram"></i></a>
-                                <a href={yt} target="_blank"><i className="fab fa-youtube"></i></a>
+                                <SocialMedia />
                             </div>
                         </div>
                     </div>

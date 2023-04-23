@@ -7,3 +7,4 @@ export {default as ScrollBackToTop} from "./ScrollBackToTop.jsx";
 export {default as CustomModal} from "./CustomModal/CustomModal.jsx";
 export {default as SingleModal} from "./SingleModal/SingleModal.jsx";
 export {default as RecentRead} from "./RecentRead/RecentRead.jsx";
+export {default as SocialMedia} from "./SocialMedia/SocialMedia.jsx";

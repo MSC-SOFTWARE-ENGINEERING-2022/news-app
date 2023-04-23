@@ -109,17 +109,13 @@ h6 {
 .custom-radio,
 .custom-checkbox {
     margin-bottom: 15px;
-}
-
-.custom-radio .custom-control-label::before,
-.custom-checkbox .custom-control-label::before {
-    border-color: #cccccc;
-}
-
-.custom-radio .custom-control-input:checked~.custom-control-label::before,
-.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
-    color: #ffffff;
-    background: #3d975f;
+    .custom-control-label::before {
+        border-color: #cccccc;
+    }
+    .custom-control-input:checked~.custom-control-label::before {
+        color: #ffffff;
+        background: #3d975f;
+    }
 }
 
 button.btn {
@@ -131,22 +127,35 @@ button.btn {
         background: #3d975f;
         border-color: #3d975f;
     }
-
     &.clearRecent{
         color: #ffffff;
         background: #727272;
         border: none;
         padding: 2px;
         font-size: 13px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, .4);
         &:hover {
             color: #ffffff;
             background: #535353;
         }
     }
+    &.btnClose{
+        padding: 5px !important;
+        margin: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, .4);
+    }
 }
 
-
 .col-lg-8{
+    &:has(.topicName){
+        box-shadow: 0 2px 5px rgba(0, 0, 0, .4);
+        border-radius: 5px;
+        .topicName{
+            background-color: #F1F1F1;
+            margin-top: 5px;
+            margin-left: 10px;
+        }
+    }
     &:has(.divSpinner) {
         .divSpinner{
             background-color: #f8f8f8;
@@ -534,11 +543,6 @@ button.btn {
         .nav-link {
             font-size: 14px !important;
         }
-        .tab-content{
-            .tn-title a {
-                font-size: 15px !important;
-            }
-        }
     }
     .cat-news {
         .slick-prev, .slick-next {
@@ -550,8 +554,13 @@ button.btn {
     }
     .btnContact{
         font-size: 0.9em !important;
-}
+    }
     
+    .tp-title, .nl-title, .tn-title{
+        a{
+            font-size: 14px !important;
+        }
+    }
 }
 
 .contact-form {
@@ -702,7 +711,7 @@ button.btn {
         padding: 10px 15px;
         a {
             color: #000000;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 400;
             transition: all .3s;
             &:hover {
@@ -922,6 +931,42 @@ button.btn {
 }
 
 /**********************************/
+/*********** Modal CSS **********/
+/**********************************/
+.singleModal{
+    .modal-content{
+        .md-content{
+            img {
+                width: 100%;
+                border-radius: 2px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
+            }
+        }
+        .sub-content{
+            p {
+                padding: 2px;
+                margin-bottom: 2px;
+                font-size: 0.95em;
+                &.author, &.date{
+                    font-size: 0.8em;
+                    padding: 0;
+                    margin: 0;
+                }
+                &.section{
+                    font-size: 0.8em;
+                    background-color: #e2e2e2;
+                    width: fit-content;
+                    border-radius: 5px;
+                    padding: 5px;
+                    box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
+                }
+            }
+        }
+    }
+}
+
+
+/**********************************/
 /*********** Sidebar CSS **********/
 /**********************************/
 .sidebar {
@@ -1078,14 +1123,6 @@ button.btn {
     }
 }
 
-
-// .sidebar .tab-news .nav.nav-pills .nav-link:hover,
-// .sidebar .tab-news .nav.nav-pills .nav-link.active {
-//     color: #ffffff;
-//     background: #3d975f;
-// }
-
-
 /**********************************/
 /********** Contact CSS ***********/
 /**********************************/
@@ -1132,7 +1169,6 @@ button.btn {
         }
     }
 }
-
 
 /**********************************/
 /********** Footer CSS ************/
@@ -1372,6 +1408,7 @@ button:focus, .navbar-toggler:focus, .navbar-toggler:hover{
         margin-bottom: 15px;
         background: #ffffff;
         min-height: 100px;
+        min-width: fit-content;
     }
 
     .tp-img {
@@ -1385,7 +1422,7 @@ button:focus, .navbar-toggler:focus, .navbar-toggler:hover{
         padding: 10px 15px;
         a {
             color: #000000;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 400;
             transition: all .3s;
             &:hover {
@@ -1395,7 +1432,9 @@ button:focus, .navbar-toggler:focus, .navbar-toggler:hover{
     }
 }
 
-// Scrollbar Override
+/**********************************/
+/******** Scrollbar CSS *******/
+/**********************************/
 .scroll-inner {
     &::-webkit-scrollbar {
         width: 10px;
@@ -1415,8 +1454,9 @@ button:focus, .navbar-toggler:focus, .navbar-toggler:hover{
 
 
 
-//Contact
-
+/**********************************/
+/******** Contact CSS *******/
+/**********************************/
 .contact-form{
     background: #fff;
     margin-top: 10%;

@@ -2,10 +2,10 @@ import { useContext, useState } from 'react';
 import configs from '../../configs/configs';
 import { DEPE } from '../../configs/utils';
 import LocalStorageCtx from '../../contexts/LocalStorage';
+import SocialMedia from '../SocialMedia/SocialMedia';
 
-const {brand, links, social_media} = configs;
+const {brand, links } = configs;
 const {home, homeB, homeC, news, news_by_topic, news_by_id, contact_us, error} = links;
-const {fb, tw, ld, ig, yt} = social_media;
 
 const NavMenu = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -55,11 +55,7 @@ const NavMenu = () => {
                         <a role='button' className={checkActive(localContent, "contacts", 'nav-item nav-link ')} entity="contacts" onClick={changeEntity}>Contact Us</a>
                     </div>
                     <div className="social ml-auto">
-                        <a href={tw} target="_blank"><i className="fab fa-twitter"></i></a>
-                        <a href={fb} target="_blank"><i className="fab fa-facebook-f"></i></a>
-                        <a href={ld} target="_blank"><i className="fab fa-linkedin-in"></i></a>
-                        <a href={ig} target="_blank"><i className="fab fa-instagram"></i></a>
-                        <a href={yt} target="_blank"><i className="fab fa-youtube"></i></a>
+                        <SocialMedia />
                     </div>
                 </div>
             </nav>

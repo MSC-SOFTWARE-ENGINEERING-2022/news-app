@@ -14,20 +14,20 @@ const Content = ({newsitem}) => {
 
     const getImg = (itm) => itm.multimedia.length && itm.multimedia.find(mu => mu.subType === "blog533").url
 
-    return <div className="sn-container single-content">
+    return <div className="md-container md-content">
         {/* <Loader /> */}
         {isLoading && <Loader />}
         {!isLoading && item && <>
-            <div className="sn-img">
+            <div className="md-img">
             <img src={getImg(item) && `http://www.nytimes.com/${getImg(item)}`} alt={item.headline["main"]} />
         </div>
-        <div className="sn-content">
-            <h3 className="sn-title">{item.headline["main"]}</h3>
-            <p>{item.byline.original} {item.pub_date.split("T")[0]}</p>
-            <p>{item.section_name}</p>
-            <h5>{item.abstract}</h5>
-            <p>{item.lead_paragraph}</p>
-            <a href={item.web_url} target="_blank">See More (Official NewYorkTimes Website)</a>
+        <div className="sub-content">
+            <p className="author">{item.byline.original}</p>
+            <p className="date">{item.pub_date.split("T")[0]}</p>
+            <p className="section">{item.section_name}</p>
+            <p className="pAbstract">{item.abstract}</p>
+            <p className="pLead">{item.lead_paragraph}</p>
+            <a className="externalSrc" href={item.web_url} target="_blank">See More (Official NewYorkTimes Website)</a>
         </div>
         </>}
     </div>

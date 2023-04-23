@@ -28,7 +28,7 @@ const configs = {
         fb: "https://www.facebook.com/",
         tw: "https://twitter.com/",
         ig: "https://www.instagram.com/",
-        git: "https://github.com/",
+        git: "https://github.com/MSC-SOFTWARE-ENGINEERING-2022/news-app",
         ld: "https://ke.linkedin.com/",
         yt: "https://www.youtube.com/"
     }
