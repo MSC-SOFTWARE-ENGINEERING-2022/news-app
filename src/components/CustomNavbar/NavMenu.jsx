@@ -15,12 +15,14 @@ const NavMenu = () => {
 
     const changeEntity = (item) => {
         // console.log(item)
+        DEPE.scrollToTop();
         setLocalContent((obj) => ({...localContent, entity: DEPE.getAttribs(item, 'entity')}));
     }
 
     const checkActive = (content, item, itemClass) => (content.entity === item)? `${itemClass} active`: itemClass;
 
     const changeTopic = (item) => {
+        DEPE.scrollToTop();
         setLocalContent((obj) => ({...localContent, entity:"news", topic: DEPE.getAttribs(item, 'topic')}));
         // console.log("localContent-nav", localContent);
     }
