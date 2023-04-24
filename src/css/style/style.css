@@ -638,6 +638,7 @@ button.btn.clearRecent:disabled {
   color: #ffffff;
   background: #000000;
   border-radius: 0;
+  white-space: nowrap;
 }
 .tab-news .nav.nav-pills .nav-link:hover, .tab-news .nav.nav-pills .nav-link.active {
   color: #ffffff;
@@ -1225,6 +1226,7 @@ button.btn.clearRecent:disabled {
 .footer .newsletter form {
   position: relative;
   width: 100%;
+  min-width: 240px;
 }
 .footer .newsletter input {
   width: 100%;
@@ -1272,6 +1274,7 @@ button.btn.clearRecent:disabled {
 .footer-menu .f-menu a {
   color: #ffffff !important;
   font-size: 14px;
+  white-space: nowrap;
   margin-right: 15px;
   padding-right: 15px;
   border-right: 1px solid #ffffff;
@@ -1285,6 +1288,24 @@ button.btn.clearRecent:disabled {
   border-right: none;
 }
 
+@media (max-width: 600.98px) {
+  .footer-menu .f-menu {
+    font-size: 0;
+    text-align: center;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    border-right: 1px solid #ffffff;
+    margin-right: 10px;
+  }
+  .footer-menu .f-menu a {
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+}
 /**********************************/
 /******** Footer Bottom CSS *******/
 /**********************************/
